@@ -1,5 +1,5 @@
 import { Award } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../../renderer";
+import { Theme } from "../../../../..";
 import { Tags } from "../tags";
 import { Summary } from "../summary";
 import { Location } from "../location";
