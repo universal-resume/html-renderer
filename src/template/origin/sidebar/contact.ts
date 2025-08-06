@@ -1,18 +1,17 @@
 type ContactArgs = {
-    email?: string;
-    phone?: string;
-}
+	email?: string;
+	phone?: string;
+};
 
 function Contact({ phone, email }: ContactArgs) {
-
-    return {
-        build: () => {
-            const ul = document.createElement('ul');
-            ul.classList.add('py-4', 'gap-3', 'flex', 'flex-col');
-            if (phone) {
-                const li = document.createElement('li');
-                li.classList.add('text-white');
-                li.innerHTML = `
+	return {
+		build: () => {
+			const ul = document.createElement("ul");
+			ul.classList.add("py-4", "gap-3", "flex", "flex-col");
+			if (phone) {
+				const li = document.createElement("li");
+				li.classList.add("text-white");
+				li.innerHTML = `
                 <a href="tel:${phone}" class="font-bold text-sm flex items-center justify-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor"
                     width="12" height="12"
@@ -22,13 +21,13 @@ function Contact({ phone, email }: ContactArgs) {
                 </svg> Phone
                 </a>
                 <a href="tel:${phone}" class="text-xs flex items-center justify-center">${phone}</a>
-                `
-                ul.appendChild(li);
-            }
-            if (email) {
-                const li = document.createElement('li');
-                li.classList.add('text-white');
-                li.innerHTML = `
+                `;
+				ul.appendChild(li);
+			}
+			if (email) {
+				const li = document.createElement("li");
+				li.classList.add("text-white");
+				li.innerHTML = `
             <a href="mailto:${email}" class="font-bold text-sm flex items-center justify-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="12"
                 height="12" stroke="currentColor" fill="currentColor"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -37,12 +36,12 @@ function Contact({ phone, email }: ContactArgs) {
                             </svg> Email
                             </a>
                 <a href="mailto:${email}" class="text-xs flex items-center justify-center">${email}</a>
-                `
-                ul.appendChild(li);
-            }
-            return ul;
-        }
-    }
+                `;
+				ul.appendChild(li);
+			}
+			return ul;
+		},
+	};
 }
 
 export default Contact;

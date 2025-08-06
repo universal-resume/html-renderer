@@ -6,37 +6,41 @@ import type { TemplateId } from "./template";
 import { formater } from "./renderer/formater";
 
 export type Theme = {
-    color: string;
-}
+	color: string;
+};
 
 type Config = {
-    domElement: string;
-    theme: Theme;
-    template: TemplateId;
-}
+	domElement: string;
+	theme: Theme;
+	template: TemplateId;
+};
 
-const DEFAULT_THEME: Theme = { color: 'blue' }
-
+const DEFAULT_THEME: Theme = { color: "blue" };
 
 export async function Renderer(json: object, config?: Config) {
+	const decode = Schema.decodeUnknown(Resume.Schema)({
+		...json,
+		meta: {},
+	}).pipe(Effect.mapError(formater));
 
-    const decode = Schema.decodeUnknown(Resume.Schema)({...json, meta: {}})
-        .pipe(Effect.mapError(formater))
+	const resume = await Effect.runPromiseExit(decode);
 
-    const resume = await Effect.runPromiseExit(decode)
+	if (isFailure(resume) && resume.cause._tag === "Fail") {
+		throw new Error(`Malformed resume: ${resume.cause.error}`);
+	}
 
-    if (isFailure(resume) && resume.cause._tag === 'Fail') {
-        throw new Error(`Malformed resume: ${resume.cause.error}`)
-    }
+	const domElement = document.getElementById(config?.domElement || "resume");
 
-    const domElement = document.getElementById(config?.domElement || 'resume')
+	if (!domElement) {
+		throw new Error(`DOM element "${config?.domElement}" not found`);
+	}
 
-    if (!domElement) {
-        throw new Error(`DOM element "${config?.domElement}" not found`)
-    }
-
-    if (isSuccess(resume)) {
-        domElement.innerHTML = ''
-        Template(config?.template).render(resume.value, domElement, config?.theme || DEFAULT_THEME)
-    }
+	if (isSuccess(resume)) {
+		domElement.innerHTML = "";
+		Template(config?.template).render(
+			resume.value,
+			domElement,
+			config?.theme || DEFAULT_THEME,
+		);
+	}
 }

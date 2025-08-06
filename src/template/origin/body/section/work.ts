@@ -9,23 +9,33 @@ import { Tags } from "../tags";
 import { Layout } from "../layout";
 
 export function WorkRenderer(
-    { position, contractType, organization, location, startDate, endDate, description, highlights, url, tags }: Work.Type,
-    { color }: Theme,
-    index: number
+	{
+		position,
+		contractType,
+		organization,
+		location,
+		startDate,
+		endDate,
+		description,
+		highlights,
+		url,
+		tags,
+	}: Work.Type,
+	{ color }: Theme,
+	index: number,
 ) {
-
-    return {
-        build: () => {
-            const title = `<span><strong>${position}</strong> at <strong>${organization}</strong></span>`
-            const content = `
-                ${TitleAndDate({ title , startDate, endDate}, { color })}
+	return {
+		build: () => {
+			const title = `<span><strong>${position}</strong> at <strong>${organization}</strong></span>`;
+			const content = `
+                ${TitleAndDate({ title, startDate, endDate }, { color })}
                 ${Location(location, { color })}
                 ${Link(url, { color })}
                 ${Summary(description, { color })}
                 ${Highlights(highlights, { color })}
                 ${Tags(tags, { color })}
-            `
-            return Layout('work', index, content);
-        }
-    }
+            `;
+			return Layout("work", index, content);
+		},
+	};
 }

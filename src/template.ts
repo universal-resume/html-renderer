@@ -1,30 +1,30 @@
-import { Resume } from "@universal-resume/ts-schema"
-import { origin } from "./template/origin"
-import { Theme } from "./renderer"
+import { Resume } from "@universal-resume/ts-schema";
+import { origin } from "./template/origin";
+import { Theme } from "./renderer";
 
 export const TEMPLATES = {
-    'origin': origin
-} as const
-const DEFAULT_TEMPLATE: TemplateId = 'origin'
+	origin: origin,
+} as const;
+const DEFAULT_TEMPLATE: TemplateId = "origin";
 
-export type TemplateId = keyof typeof TEMPLATES
+export type TemplateId = keyof typeof TEMPLATES;
 
 export type Page = {
-    index: number
-    element: HTMLElement
-}
+	index: number;
+	element: HTMLElement;
+};
 
 export type RendererActions = {
-    addPage: () => Page
-    getPages: () => Page[]
-}
+	addPage: () => Page;
+	getPages: () => Page[];
+};
 
 const createPageStyles = () => {
-    const styles = document.getElementById('page-styles')
-    if (!styles) {
-        const pageStyles = document.createElement('style');
-        pageStyles.type = 'text/css';
-        pageStyles.innerHTML = `
+	const styles = document.getElementById("page-styles");
+	if (!styles) {
+		const pageStyles = document.createElement("style");
+		pageStyles.type = "text/css";
+		pageStyles.innerHTML = `
             .page {
                 page-break-after: always;
                 width: 210mm;
@@ -54,48 +54,47 @@ const createPageStyles = () => {
             }
         `;
 
-        document.head.appendChild(pageStyles);
-    }
-}
+		document.head.appendChild(pageStyles);
+	}
+};
 
 export const Template = (id: TemplateId = DEFAULT_TEMPLATE) => {
+	const renderer = TEMPLATES[id];
 
-    const renderer = TEMPLATES[id]
+	if (!renderer) {
+		throw new Error(`Template "${id}" not found`);
+	}
 
-    if (!renderer) {
-        throw new Error(`Template "${id}" not found`)
-    }
+	createPageStyles();
 
-    createPageStyles()
+	const pages: Page[] = [];
 
-    const pages: Page[] = []
+	const addPage = (parent: HTMLElement) => (): Page => {
+		const index = pages.length;
+		const domElement = document.createElement("div");
+		const page = {
+			index,
+			element: domElement,
+		};
 
-    const addPage = (parent: HTMLElement) => (): Page => {
-        const index = pages.length
-        const domElement = document.createElement('div');
-        const page = {
-            index,
-            element: domElement
-        }
+		domElement.id = `page-${index + 1}`;
+		domElement.classList.add("page", "flex");
 
-        domElement.id = `page-${index + 1}`;
-        domElement.classList.add('page', 'flex');
+		pages.push(page);
 
-        pages.push(page);
+		parent.appendChild(page.element);
 
-        parent.appendChild(page.element);
+		return page;
+	};
 
-        return page;
-    }
+	const getPages = () => pages;
 
-    const getPages = () => pages
-
-    return {
-        render: (resume: Resume.Type, domElement: HTMLElement, theme: Theme) => {
-            return renderer(resume, theme, {
-                addPage: addPage(domElement),
-                getPages
-            })
-        }
-    }
-}
+	return {
+		render: (resume: Resume.Type, domElement: HTMLElement, theme: Theme) => {
+			return renderer(resume, theme, {
+				addPage: addPage(domElement),
+				getPages,
+			});
+		},
+	};
+};
