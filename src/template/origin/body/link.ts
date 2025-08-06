@@ -1,7 +1,10 @@
-import { Theme } from "../../../renderer";
+import type { Theme } from "@renderer";
 
-export const Link = (url: string | undefined, { color }: Theme): string => {
-	if (!location) return "";
+export const LinkHtmlElement = (
+	url: string | undefined,
+	{ color }: Theme,
+): string => {
+	if (!url) return "";
 	return `
         <div class="text-xs flex items-center gap-1 text-${color}-600 hover:text-${color}-700">
 

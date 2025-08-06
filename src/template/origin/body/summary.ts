@@ -1,9 +1,4 @@
-import { Theme } from "../../../renderer";
-
-export const Summary = (
-	summary: string | undefined,
-	{ color }: Theme,
-): string => {
+export const SummaryHtmlElement = (summary: string | undefined): string => {
 	if (!summary) return "";
 	return `<p class="text-xs">${summary}</p>`;
 };

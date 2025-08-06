@@ -1,27 +1,24 @@
-import { Project } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../renderer";
-import { TitleAndDate } from "../title-and-date";
-import { Location } from "../location";
-import { Summary } from "../summary";
-import { Tags } from "../tags";
-import { Layout } from "../layout";
-import { Link } from "../link";
-import { Highlights } from "../highlights";
+import type { Project } from "@universal-resume/ts-schema";
+import type { Theme } from "../../../../renderer";
+import { HighlightsHtmlElement } from "../highlights";
+import { SectionLayout } from "../layout";
+import { LinkHtmlElement } from "../link";
+import { LocationHtmlElement } from "../location";
+import { SummaryHtmlElement } from "../summary";
+import { TagsHtmlElement } from "../tags";
+import { TitleAndDateHtmlElement } from "../title-and-date";
 
-export function ProjectRenderer(
+export function ProjectHtmlElement(
 	{
-		name,
 		description,
-		url,
-		startDate,
 		endDate,
-		roles,
-		tags,
-		location,
-		entity,
 		highlights,
-		status,
-		type,
+		location,
+		name,
+		roles,
+		startDate,
+		tags,
+		url,
 	}: Project.Type,
 	{ color }: Theme,
 	index: number,
@@ -30,14 +27,14 @@ export function ProjectRenderer(
 		build: () => {
 			const title = `<span>${roles ? `${roles.map((role) => `<strong>${role}</strong>`).join(", ")} for ` : ""} ${name ? `<strong>${name}</strong>` : ""}</span>`;
 			const content = `
-                ${TitleAndDate({ title, startDate, endDate }, { color })}
-                ${Location(location, { color })}
-                ${Link(url, { color })}
-                ${Summary(description, { color })}
-                ${Highlights(highlights, { color })}
-                ${Tags(tags, { color })}
+                ${TitleAndDateHtmlElement({ title, startDate, endDate })}
+                ${LocationHtmlElement(location, { color })}
+                ${LinkHtmlElement(url, { color })}
+                ${SummaryHtmlElement(description)}
+                ${HighlightsHtmlElement(highlights)}
+                ${TagsHtmlElement(tags, { color })}
             `;
-			return Layout("project", index, content);
+			return SectionLayout("project", index, content);
 		},
 	};
 }

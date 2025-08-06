@@ -1,12 +1,12 @@
-import { Award } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../..";
-import { Tags } from "../tags";
-import { Summary } from "../summary";
-import { Location } from "../location";
-import { TitleAndDate } from "../title-and-date";
-import { Layout } from "../layout";
+import type { Theme } from "@renderer";
+import type { Award } from "@universal-resume/ts-schema";
+import { SectionLayout } from "../layout";
+import { LocationHtmlElement } from "../location";
+import { SummaryHtmlElement } from "../summary";
+import { TagsHtmlElement } from "../tags";
+import { TitleAndDateHtmlElement } from "../title-and-date";
 
-export function AwardRenderer(
+export function AwardHtmlElement(
 	{ awarder, date, summary, location, tags, title }: Award.Type,
 	{ color }: Theme,
 	index: number,
@@ -14,12 +14,12 @@ export function AwardRenderer(
 	return {
 		build: () => {
 			const content = `
-                ${TitleAndDate({ title: `<span><strong>${title}</strong> from <strong>${awarder}</strong></span>`, date }, { color })}
-                ${Location(location, { color })}
-                ${Summary(summary, { color })}
-                ${Tags(tags, { color })}
+                ${TitleAndDateHtmlElement({ title: `<span><strong>${title}</strong> from <strong>${awarder}</strong></span>`, date })}
+                ${LocationHtmlElement(location, { color })}
+                ${SummaryHtmlElement(summary)}
+                ${TagsHtmlElement(tags, { color })}
             `;
-			return Layout("award", index, content);
+			return SectionLayout("award", index, content);
 		},
 	};
 }

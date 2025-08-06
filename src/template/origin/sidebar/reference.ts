@@ -1,14 +1,15 @@
-import { Reference } from "@universal-resume/ts-schema";
-import { Theme } from "../../../renderer";
+import type { Reference } from "@universal-resume/ts-schema";
+import type { Theme } from "../../../renderer";
 
-export function ReferenceRenderer(
-	{ name, testimonial, company, contact, position }: Reference.Type,
+export function ReferenceHtmlElement(
+	{ name, testimonial, position }: Reference.Type,
 	{ color }: Theme,
 	index: number,
 ) {
 	return {
 		build: () => {
 			const container = document.createElement("div");
+			container.id = `reference-${index}`;
 			container.classList.add(
 				"flex",
 				"flex-col",

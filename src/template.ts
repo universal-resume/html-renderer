@@ -1,6 +1,6 @@
-import { Resume } from "@universal-resume/ts-schema";
+import type { Resume } from "@universal-resume/ts-schema";
+import type { Theme } from "./renderer";
 import { origin } from "./template/origin";
-import { Theme } from "./renderer";
 
 export const TEMPLATES = {
 	origin: origin,

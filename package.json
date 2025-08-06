@@ -6,8 +6,8 @@
 		"serve": "vite",
 		"build": "vite build",
 		"check": "biome check .",
-		"format": "biome format . --write",
-		"lint": "biome lint ."
+		"format": "biome format --write .",
+		"lint": "biome lint --write ."
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.1.2",

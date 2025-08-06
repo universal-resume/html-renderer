@@ -1,23 +1,13 @@
-import { Publication } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../renderer";
-import { TitleAndDate } from "../title-and-date";
-import { Layout } from "../layout";
-import { Link } from "../link";
-import { Summary } from "../summary";
-import { Tags } from "../tags";
+import type { Theme } from "@renderer";
+import type { Publication } from "@universal-resume/ts-schema";
+import { SectionLayout } from "../layout";
+import { LinkHtmlElement } from "../link";
+import { SummaryHtmlElement } from "../summary";
+import { TagsHtmlElement } from "../tags";
+import { TitleAndDateHtmlElement } from "../title-and-date";
 
-export function PublicationRenderer(
-	{
-		name,
-		publisher,
-		releaseDate,
-		summary,
-		url,
-		authors,
-		doi,
-		tags,
-		type,
-	}: Publication.Type,
+export function PublicationHtmlElement(
+	{ name, publisher, releaseDate, summary, url, tags }: Publication.Type,
 	{ color }: Theme,
 	index: number,
 ) {
@@ -25,12 +15,12 @@ export function PublicationRenderer(
 		build: () => {
 			const title = `<span><strong>${name}</strong> ${publisher ? `by <strong>${publisher}</strong>` : ""}</span>`;
 			const content = `
-                ${TitleAndDate({ title, date: releaseDate }, { color })}
-                ${Link(url, { color })}
-                ${Summary(summary, { color })}
-                ${Tags(tags, { color })}
+                ${TitleAndDateHtmlElement({ title, date: releaseDate })}
+                ${LinkHtmlElement(url, { color })}
+                ${SummaryHtmlElement(summary)}
+                ${TagsHtmlElement(tags, { color })}
             `;
-			return Layout("publication", index, content);
+			return SectionLayout("publication", index, content);
 		},
 	};
 }

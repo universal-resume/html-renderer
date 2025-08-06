@@ -1,17 +1,16 @@
-import { Work } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../renderer";
-import { TitleAndDate } from "../title-and-date";
-import { Location } from "../location";
-import { Link } from "../link";
-import { Summary } from "../summary";
-import { Highlights } from "../highlights";
-import { Tags } from "../tags";
-import { Layout } from "../layout";
+import type { Work } from "@universal-resume/ts-schema";
+import type { Theme } from "../../../../renderer";
+import { HighlightsHtmlElement } from "../highlights";
+import { SectionLayout } from "../layout";
+import { LinkHtmlElement } from "../link";
+import { LocationHtmlElement } from "../location";
+import { SummaryHtmlElement } from "../summary";
+import { TagsHtmlElement } from "../tags";
+import { TitleAndDateHtmlElement } from "../title-and-date";
 
-export function WorkRenderer(
+export function WorkHtmlElement(
 	{
 		position,
-		contractType,
 		organization,
 		location,
 		startDate,
@@ -28,14 +27,14 @@ export function WorkRenderer(
 		build: () => {
 			const title = `<span><strong>${position}</strong> at <strong>${organization}</strong></span>`;
 			const content = `
-                ${TitleAndDate({ title, startDate, endDate }, { color })}
-                ${Location(location, { color })}
-                ${Link(url, { color })}
-                ${Summary(description, { color })}
-                ${Highlights(highlights, { color })}
-                ${Tags(tags, { color })}
+                ${TitleAndDateHtmlElement({ title, startDate, endDate })}
+                ${LocationHtmlElement(location, { color })}
+                ${LinkHtmlElement(url, { color })}
+                ${SummaryHtmlElement(description)}
+                ${HighlightsHtmlElement(highlights)}
+                ${TagsHtmlElement(tags, { color })}
             `;
-			return Layout("work", index, content);
+			return SectionLayout("work", index, content);
 		},
 	};
 }

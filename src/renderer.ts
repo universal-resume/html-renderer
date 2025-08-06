@@ -1,9 +1,9 @@
-import { Effect, Schema } from "effect";
 import { Resume } from "@universal-resume/ts-schema";
+import { Effect, Schema } from "effect";
 import { isFailure, isSuccess } from "effect/Exit";
-import { Template, TEMPLATES } from "./template";
-import type { TemplateId } from "./template";
 import { formater } from "./renderer/formater";
+import type { TemplateId } from "./template";
+import { Template } from "./template";
 
 export type Theme = {
 	color: string;

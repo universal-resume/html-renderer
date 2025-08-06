@@ -1,13 +1,13 @@
-import { Volunteer } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../renderer";
-import { TitleAndDate } from "../title-and-date";
-import { Location } from "../location";
-import { Summary } from "../summary";
-import { Highlights } from "../highlights";
-import { Tags } from "../tags";
-import { Layout } from "../layout";
+import type { Volunteer } from "@universal-resume/ts-schema";
+import type { Theme } from "../../../../renderer";
+import { HighlightsHtmlElement } from "../highlights";
+import { SectionLayout } from "../layout";
+import { LocationHtmlElement } from "../location";
+import { SummaryHtmlElement } from "../summary";
+import { TagsHtmlElement } from "../tags";
+import { TitleAndDateHtmlElement } from "../title-and-date";
 
-export function VolunteerRenderer(
+export function VolunteerHtmlElement(
 	{
 		organization,
 		position,
@@ -25,13 +25,13 @@ export function VolunteerRenderer(
 		build: () => {
 			const title = `<span><strong>${organization}</strong> as <strong>${position}</strong></span>`;
 			const content = `
-                ${TitleAndDate({ title, startDate, endDate }, { color })}
-                ${Location(location, { color })}
-                ${Summary(summary, { color })}
-                ${Highlights(highlights, { color })}
-                ${Tags(tags, { color })}
+                ${TitleAndDateHtmlElement({ title, startDate, endDate })}
+                ${LocationHtmlElement(location, { color })}
+                ${SummaryHtmlElement(summary)}
+                ${HighlightsHtmlElement(highlights)}
+                ${TagsHtmlElement(tags, { color })}
             `;
-			return Layout("volunteer", index, content);
+			return SectionLayout("volunteer", index, content);
 		},
 	};
 }

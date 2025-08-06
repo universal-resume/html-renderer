@@ -1,11 +1,9 @@
+import type { Theme } from "@renderer";
+
 type HeaderArgs = {
 	name: string;
 	headline: string;
 	url?: string | undefined;
-};
-
-type Theme = {
-	color: string;
 };
 
 export function Header({ name, headline, url }: HeaderArgs, { color }: Theme) {

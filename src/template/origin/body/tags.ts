@@ -1,6 +1,6 @@
-import { Theme } from "../../../renderer";
+import type { Theme } from "@renderer";
 
-export const Tags = (
+export const TagsHtmlElement = (
 	tags: readonly string[] | undefined,
 	{ color }: Theme,
 ): string => {

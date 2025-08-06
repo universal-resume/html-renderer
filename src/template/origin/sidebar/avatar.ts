@@ -1,4 +1,4 @@
-import { Theme } from "../../../renderer";
+import type { Theme } from "../../../renderer";
 
 type AvatarArgs = {
 	src: string;

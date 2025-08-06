@@ -1,5 +1,3 @@
-import { Theme } from "../../renderer";
-
 export type Body = {
 	element: HTMLElement;
 	pushItem: (item: HTMLElement) => Promise<{ height: number; limit: number }>;
@@ -7,7 +5,7 @@ export type Body = {
 	pop: () => ChildNode | undefined;
 };
 
-export function Body({ color }: Theme): Body {
+export function Body(): Body {
 	const pageHeightContainer = document.createElement("div");
 	pageHeightContainer.classList.add("page-body", "w-3/4", "min-h-full", "p-4");
 	const dynamicHeightContainer = document.createElement("div");

@@ -1,4 +1,4 @@
-import { Theme } from "../../..";
+import type { Theme } from "../../..";
 
 export type Sidebar = {
 	element: HTMLElement;

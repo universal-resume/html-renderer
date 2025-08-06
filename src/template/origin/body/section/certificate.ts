@@ -1,11 +1,11 @@
-import { Certificate } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../renderer";
-import { TitleAndDate } from "../title-and-date";
-import { Link } from "../link";
-import { Tags } from "../tags";
-import { Layout } from "../layout";
+import type { Certificate } from "@universal-resume/ts-schema";
+import type { Theme } from "../../../../renderer";
+import { SectionLayout } from "../layout";
+import { LinkHtmlElement } from "../link";
+import { TagsHtmlElement } from "../tags";
+import { TitleAndDateHtmlElement } from "../title-and-date";
 
-export function CertificateRenderer(
+export function CertificateHtmlElement(
 	{ name, issuer, issueDate, url, tags }: Certificate.Type,
 	{ color }: Theme,
 	index: number,
@@ -14,11 +14,11 @@ export function CertificateRenderer(
 		build: () => {
 			const title = `<span><strong>${name}</strong> ${issuer ? `by <strong>${issuer}</strong>` : ""}</span>`;
 			const content = `
-                ${TitleAndDate({ title, date: issueDate }, { color })}
-                ${Link(url, { color })}
-                ${Tags(tags, { color })}
+                ${TitleAndDateHtmlElement({ title, date: issueDate })}
+                ${LinkHtmlElement(url, { color })}
+                ${TagsHtmlElement(tags, { color })}
             `;
-			return Layout("certificate", index, content);
+			return SectionLayout("certificate", index, content);
 		},
 	};
 }

@@ -1,6 +1,6 @@
-import { Theme } from "../../../renderer";
+import type { Theme } from "@renderer";
 
-export const Location = (
+export const LocationHtmlElement = (
 	location: string | undefined,
 	{ color }: Theme,
 ): string => {

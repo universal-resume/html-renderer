@@ -1,4 +1,8 @@
-import { ParseError, ParseIssue, SingleOrNonEmpty } from "effect/ParseResult";
+import type {
+	ParseError,
+	ParseIssue,
+	SingleOrNonEmpty,
+} from "effect/ParseResult";
 
 function isSingle<T>(value: SingleOrNonEmpty<T>): value is T {
 	return !Array.isArray(value);

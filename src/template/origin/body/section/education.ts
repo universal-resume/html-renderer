@@ -1,19 +1,18 @@
-import { Education } from "@universal-resume/ts-schema";
-import { Theme } from "../../../../renderer";
-import { TitleAndDate } from "../title-and-date";
-import { Location } from "../location";
-import { Link } from "../link";
-import { Layout } from "../layout";
+import type { Theme } from "@renderer";
+import type { Education } from "@universal-resume/ts-schema";
+import { SectionLayout } from "../layout";
+import { LinkHtmlElement } from "../link";
+import { LocationHtmlElement } from "../location";
+import { TitleAndDateHtmlElement } from "../title-and-date";
 
 export const Courses = (
 	courses: Education.Type["courses"] | undefined,
-	{ color }: Theme,
 ): string => {
 	if (!courses || courses.length === 0) return "";
 	return `<ul class="list-disc list-inside text-xs">${courses.map((course) => `<li><strong>${course.name}</strong> ${course.description ? `<br />${course.description}` : ""}</li>`).join("")}</ul>`;
 };
 
-export function EducationRenderer(
+export function EducationHtmlElement(
 	{
 		institution,
 		area,
@@ -23,7 +22,6 @@ export function EducationRenderer(
 		endDate,
 		url,
 		location,
-		score,
 	}: Education.Type,
 	{ color }: Theme,
 	index: number,
@@ -32,15 +30,15 @@ export function EducationRenderer(
 		build: () => {
 			const title = `<span><strong>${studyType}</strong> in <strong>${area}</strong></span>`;
 			const content = `
-                ${TitleAndDate({ title, startDate, endDate }, { color })}
+                ${TitleAndDateHtmlElement({ title, startDate, endDate })}
                 <div class="flex gap-1">
                     <span class="text-sm font-semibold">${institution}</span>
-                    ${Link(url, { color })}
+                    ${LinkHtmlElement(url, { color })}
                 </div>
-                ${Location(location, { color })}
-                ${Courses(courses, { color })}
+                ${LocationHtmlElement(location, { color })}
+                ${Courses(courses)}
             `;
-			return Layout("education", index, content);
+			return SectionLayout("education", index, content);
 		},
 	};
 }
