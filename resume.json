@@ -1,253 +1,395 @@
 {
-	"basics": {
-		"name": "Alexis Besson",
-		"headline": "Senior Software Engineer",
-		"image": "https://media.licdn.com/dms/image/v2/D4E03AQHu3mveAvgBKQ/profile-displayphoto-crop_800_800/B4EZgNON4eGYAU-/0/1752568487991?e=1758153600&v=beta&t=cgElhcWQI5BP6eUVXrCtHWZdQpM_4d5oCnOHNaZ0dYE",
-		"url": "https://alexis.besson.tech",
-		"location": {
-			"city": "Lyon, France",
-			"remote": true
-		},
-		"summary": "I bridge technical and business teams through deep product vision. Fueled by exploring complex challenges, I leverage my expertise to strengthen digital teams in forward-thinking companies.",
-		"phone": "+33 (0)6 07 08 09 00",
-		"email": "alexis@besson.tech",
-		"profiles": [
-			{
-				"network": "LinkedIn",
-				"username": "Alexis Besson",
-				"url": "https://www.linkedin.com/in/alexis-besson-0a02bb107/"
-			},
-			{
-				"network": "GitHub",
-				"username": "Lab3ss",
-				"url": "https://github.com/Lab3ss"
-			}
-		],
-		"driverLicenses": ["A", "B"]
-	},
-	"languages": [
-		{
-			"language": "French",
-			"fluency": "Native speaker"
-		},
-		{
-			"language": "English",
-			"fluency": "Professional working proficiency"
-		}
-	],
-	"skills": [
-		{
-			"name": "Commited",
-			"tags": ["Product-Minded", "Leadership", "Hands-on"]
-		},
-		{
-			"name": "Experience",
-			"tags": ["10+ years", "Autonomous", "Mentor"]
-		},
-		{
-			"name": "Energy",
-			"tags": ["Teamwork", "Enthusiastic", "Agile"]
-		},
-		{
-			"name": "Productivity",
-			"tags": ["AI-Enhanced"]
-		}
-	],
-	"awards": [
-		{
-			"title": "Potential EUDI Consortium Hackathon Winner",
-			"location": "Dresden, Germany",
-			"date": "2024-08",
-			"awarder": "Vodafone",
-			"summary": "48h hackathon to interop our team between Issuer (my role), Identity Wallet and Verifier in order to make working a complete SSI flow, including revocation.",
-			"tags": ["SSI", "EUDIW", "OpenID", "Interop", "🥇 1st place"]
-		}
-	],
-	"projects": [
-		{
-			"name": "SSI Wallet Interop. Tool",
-			"description": "Help identity wallet providers interoperate with each other by providing challenges based on the OpenID4VC draft and specification.",
-			"tags": ["🦀 Rust", "OpenID4VC", "Coolify", "Tailwind"],
-			"startDate": "2025-05",
-			"endDate": "2025-06",
-			"roles": ["Software Engineer & Product Owner"],
-			"url": "https://lab.id-wallets.tech",
-			"entity": "Side project",
-			"type": "Application"
-		}
-	],
-	"work": [
-		{
-			"organization": "Archipels",
-			"position": "Lead Software Engineer",
-			"url": "https://archipels.io",
-			"startDate": "2024-07",
-			"endDate": "2025-04",
-			"description": "Since the deployment of the Archipels wallet, my role also took on a managerial orientation, with <mark>responsibility for delivery</mark> and implementing the necessary processes to ensure consistent velocity, as well as optimal quality and maintainability. We also worked on implementing another credential exchange protocol more aligned with EUDIW recommendations. I took charge of implementing these new protocols as well as the <mark>responsibility for our interoperability </mark> with other actors in the SSI ecosystem.",
-			"tags": [
-				"Management",
-				"Coordination",
-				"🦀 Rust",
-				"Typescript",
-				"Effect-TS",
-				"Node-RED"
-			]
-		},
-		{
-			"organization": "Archipels",
-			"position": "Fullstack Software Engineer",
-			"url": "https://archipels.io",
-			"startDate": "2023-10",
-			"endDate": "2024-07",
-			"description": "Archipels specially had a very interesting product where I discovered a new functional domain. Self-Sovereign Identity (SSI) aims to address numerous societal problems, and the underlying technologies are fascinating. Initially, I joined Archipels as a senior software engineer to implement a web identity & organization wallet, designed for individuals but especially for businesses.",
-			"tags": [
-				"Typescript",
-				"NodeJS",
-				"Node-RED",
-				"React",
-				"Postgresql",
-				"Kafka",
-				"Websockets"
-			]
-		},
-		{
-			"organization": "Polycea",
-			"position": "Backend Software Engineer",
-			"url": "https://polycea.fr/",
-			"startDate": "2022-07",
-			"endDate": "2023-06",
-			"description": "FDJ (Francaise des Jeux) group entrusted Polyconseil with the design and development of its Nirio application, the new <mark>payment service</mark> of the group. It is in this context that I came to reinforce Polyconseil's technical teams at the beginning of the adventure. I mainly worked on the <mark>authentication</mark>, the user <mark>onboarding workflow</mark>, the synchronization of the points of sales with the FDJ group's IS, and end-to-end tests with the mobile application.",
-			"tags": ["NestJS", "Typescript", "GraphQL", "Prisma", "GCP"]
-		},
-		{
-			"organization": "Boiron laboratories",
-			"position": "Frontend Software Engineer",
-			"url": "https://www.boiron.fr/",
-			"startDate": "2022-01",
-			"endDate": "2022-06",
-			"description": "Within the digital team of the Boiron group, I participated in the maintenance and evolution of a professional portal made available to health professionals in order to provide information on the products of the group.",
-			"tags": ["NextJS", "Redux", "Typescript", "GraphQL", "Drupal", "Prismic"]
-		},
-		{
-			"organization": "Carrier",
-			"position": "Lead Software Engineer",
-			"url": "https://www.carrier.com/",
-			"startDate": "2021-01",
-			"endDate": "2021-12",
-			"description": "Through the “ECAT” project, Carrier offers me the opportunity to take again the <mark>technical responsibility</mark> of a project <mark>from design to production</mark>. On this application, most of data come from a calculation engine built by a team in the US. All the functional rules come from a factory in Spain, the application is integrated in a more global framework developed in India and the development team is in Lyon (France). This project has a very <mark>pronounced business aspect</mark> (thermodynamics) and therefore brings together many international players. Beyond the technical challenge, this experience requires a permanent orchestration of the different actors in a 100% <mark>English speaking environment</mark>.",
-			"tags": [
-				"Coordination",
-				"Management",
-				"React",
-				"Redux",
-				"NodeJS",
-				"C#",
-				"Azure",
-				"Jenkins"
-			]
-		},
-		{
-			"organization": "HomeServe",
-			"position": "Fullstack Software Engineer",
-			"url": "https://www.homeserve.fr/",
-			"startDate": "2020-04",
-			"endDate": "2020-12",
-			"description": "At Homeserve, I joined the “HomeServe – OnDemand” product development team in an agile environment (Scrum). I participated in the stabilization of a particularly <mark>complex architecture</mark> implementing several micro-services => Addition of many unit tests (Jest). During this experience, I discovered the benefits of a strongly typed language (Typescript), as well as an alternative frontend (VueJS), and backend (Hapi).",
-			"tags": [
-				"VueJS",
-				"Typescript",
-				"Hapi",
-				"ReactNative",
-				"PostgreSQL",
-				"GCP"
-			]
-		},
-		{
-			"organization": "Umlaut",
-			"position": "Lead Software Engineer",
-			"url": "https://www.linkedin.com/company/umlaut-company",
-			"startDate": "2019-03",
-			"endDate": "2020-03",
-			"description": "Through the ESN “Umlaut”, I had the opportunity to <mark>develop from scratch</mark> a solution for the car manufacturer Renault. Design, implementation and migration to the new architecture of a vehicle test sessions management tool. Development of new functionalities on the tool in an Agile environment (Scrum) to go <mark>from a prototype to a final application</mark>. Implementation of the client part of a Dashboard prototype (visualization of different KPIs using dynamic graphs). English speaking environment.",
-			"tags": [
-				"Angular",
-				"Firebase",
-				"Typescript",
-				"NodeJS",
-				"GraphQL",
-				"KnexJS",
-				"Postgresql"
-			]
-		},
-		{
-			"organization": "Webedia (Allocine)",
-			"position": "Backend Software Engineer",
-			"url": "https://www.allocine.fr/",
-			"startDate": "2017-10",
-			"endDate": "2019-03",
-			"description": "Within a <mark>rigorous agile environment</mark> (scrum) I integrated for 18 months the development team of the B2B vertical of Allocine where I found a strong technical ecosystem, including Graphql which fits so well the needs of component-oriented front-end libraries, facilitates maintenance, readability and evolution of backend code. One of the most interesting challenge was the <mark>quantity of data</mark> to process and the need to optimize the performances of queries.",
-			"tags": ["GraphQL", "Typescript", "NodeJS", "React", "Postgresql"]
-		},
-		{
-			"organization": "Atos",
-			"position": "Frontend Software Engineer",
-			"url": "https://atos.net/fr/",
-			"startDate": "2016-07",
-			"endDate": "2017-09",
-			"description": "Internship (half school / half company). Within a team of 10 people, I participated in the development of the visualization interface of a satellite control center (ISIS project), with the permanent problem of <mark>performances optimization</mark>.",
-			"tags": ["React", "Redux", "Electron"]
-		}
-	],
-	"education": [
-		{
-			"institution": "ENSEEIHT",
-			"location": "Toulouse, France",
-			"url": "https://www.enseeiht.fr",
-			"area": "Network and Telecommunications",
-			"studyType": "Engineering",
-			"startDate": "2014-09",
-			"endDate": "2017-09",
-			"courses": []
-		},
-		{
-			"institution": "University of Burgundy",
-			"location": "Dijon, France",
-			"url": "https://www.ube.fr",
-			"area": "Computer Science",
-			"studyType": "Bachelor",
-			"startDate": "2012-09",
-			"endDate": "2014-07",
-			"courses": []
-		}
-	],
-	"references": [
-		{
-			"company": "Archipels",
-			"name": "John Doe",
-			"position": "CTO",
-			"contact": "https://www.linkedin.com/in/john-doe",
-			"testimonial": "Alexis is a great software engineer. He is very committed and has a great product vision."
-		},
-		{
-			"company": "Archipels",
-			"name": "Tony Stark",
-			"position": "Architect",
-			"contact": "https://www.linkedin.com/in/tony-stark",
-			"testimonial": "Alexis is an exceptional developer. His code is clean, efficient, and always well-documented."
-		},
-		{
-			"company": "Polycea",
-			"name": "Jerry Seinfeld",
-			"position": "Lead Software Engineer",
-			"contact": "https://www.linkedin.com/in/jerry-seinfeld",
-			"testimonial": "Alexis is a highly skilled developer with a keen eye for detail and a passion for clean, maintainable code."
-		},
-		{
-			"company": "Carrier",
-			"name": "Michael Scott",
-			"position": "Regional Manager",
-			"contact": "https://www.linkedin.com/in/michael-scott",
-			"testimonial": "Alexis is a highly dependable developer who consistently delivers quality solutions. His technical skills and attention to detail make him a valuable asset to any team."
-		}
-	]
+    "basics": {
+        "headline": "IT Leader - DevOps & Business",
+        "availability": "ASAP",
+        "name": "Bill Palmer",
+        "birth": "1976-05-17",
+        "remote": true,
+        "location": {
+            "city": "Scottsdale",
+            "region": "Arizona",
+            "countryCode": "US",
+            "postalCode": "85251"
+        },
+        "contact": {
+            "email": "bill.palmer@example.com",
+            "phone": "+1-480-555-0134",
+            "website": "https://billpalmer.example.com",
+            "linkedin": "https://www.linkedin.com/in/bill-palmer",
+            "telegram": "@BillPalmerIT"
+        },
+        "profiles": [{
+                "network": "Linkedin",
+                "url": "https://www.linkedin.com/in/bill-palmer",
+                "username": "bill-palmer"
+            },
+            {
+                "network": "Github",
+                "url": "https://github.com/billpalmer",
+                "username": "billpalmer"
+            }
+        ],
+        "summary": "Promoted from Operations to lead a failing Digital Transformation and turn around mission-critical projects. Built a culture of Flow, Feedback, And Continuous Learning across Development, Operations, And Security. Delivered business results through Lean, Agile, And DevOps practices."
+    },
+    "work": [{
+            "organization": {
+                "name": "Parts Unlimited",
+                "location": {
+                    "city": "Scottsdale",
+                    "region": "Arizona",
+                    "countryCode": "US"
+                },
+                "description": "Fortune 500 Retailer Of Automotive Parts"
+            },
+            "position": "Chief Information Officer",
+            "startDate": "2014-06",
+            "endDate": "2017-12",
+            "summary": "Led Enterprise Technology Strategy, Stabilized Core Systems, And Scaled DevOps Practices Across The Organization.",
+            "highlights": [
+                "Reduced Critical Incident Frequency By 80% Within 12 Months",
+                "Cut Lead Time For Changes From Weeks To Hours Through CI/CD And Automated Testing",
+                "Created A Unified Business Technology Roadmap Aligning Marketing, Retail, And Supply Chain",
+                "Institutionalized Blameless Postmortems And SLOs Across All Product Teams"
+            ],
+            "tags": [
+                "Leadership",
+                "DevOps",
+                "Lean",
+                "Agile",
+                "SRE",
+                "ITIL",
+                "Change Management",
+                "Cloud",
+                "Security"
+            ],
+            "url": "https://www.partsunlimited.example.com"
+        },
+        {
+            "organization": {
+                "name": "Parts Unlimited",
+                "location": {
+                    "city": "Scottsdale",
+                    "region": "Arizona",
+                    "countryCode": "US"
+                },
+                "description": "Fortune 500 Retailer Of Automotive Parts"
+            },
+            "position": "Vice President Of IT Operations",
+            "startDate": "2013-02",
+            "endDate": "2014-06",
+            "summary": "Brought In To Rescue The Phoenix Program And Stabilize Customer-Facing Systems.",
+            "highlights": [
+                "Stood Up Cross-Functional War Room To Restore Revenue-Generating Website During Peak Season",
+                "Mapped Value Streams And Eliminated Hand-Offs, Improving Flow And Throughput",
+                "Partnered With Security To Shift Left And Automate Controls",
+                "Established Visible Work Boards And WIP Limits Across Teams"
+            ],
+            "tags": [
+                "Incident Response",
+                "Value Stream",
+                "Continuous Delivery",
+                "Automation",
+                "Monitoring",
+                "Observability"
+            ]
+        },
+        {
+            "organization": {
+                "name": "Parts Unlimited",
+                "location": {
+                    "city": "Scottsdale",
+                    "region": "Arizona",
+                    "countryCode": "US"
+                }
+            },
+            "position": "Director Of Midrange Operations",
+            "startDate": "2010-05",
+            "endDate": "2013-02",
+            "summary": "Owned Legacy Systems And Data Center Operations While Championing Early DevOps Practices.",
+            "highlights": [
+                "Consolidated Tooling And Standardized Deployment Pipelines",
+                "Introduced Configuration Management And Immutable Build Artifacts",
+                "Reduced Mean Time To Recovery From Hours To Minutes"
+            ],
+            "tags": [
+                "Configuration Management",
+                "Release Engineering",
+                "Automation",
+                "Resilience"
+            ]
+        }
+    ],
+    "projects": [{
+            "name": "Phoenix Program Turnaround",
+            "organization": {
+                "name": "Parts Unlimited"
+            },
+            "position": "Program Lead",
+            "type": "Transformation",
+            "status": "Completed",
+            "startDate": "2013-02",
+            "endDate": "2014-03",
+            "summary": "Rescued A Failing Digital Initiative Threatening Company Viability. Rebuilt Teams Around Flow, Feedback, And Learning.",
+            "highlights": [
+                "Created A Single Piece Of Work Policy And Limited WIP Across Value Streams",
+                "Established Continuous Integration With Automated Unit, Integration, And Security Tests",
+                "Aligned Business Stakeholders With Product Teams Using Quarterly Planning And OKRs"
+            ],
+            "tags": [
+                "DevOps",
+                "Lean",
+                "Agile",
+                "OKR",
+                "CI",
+                "Testing"
+            ],
+            "url": "https://phoenix.partsunlimited.example.com"
+        },
+        {
+            "name": "Retail Website Reliability Initiative",
+            "organization": {
+                "name": "Parts Unlimited"
+            },
+            "position": "Sponsor",
+            "type": "Platform",
+            "status": "Completed",
+            "startDate": "2014-08",
+            "endDate": "2015-06",
+            "summary": "Introduced SLOs, Error Budgets, And Observability To Improve Customer Experience.",
+            "highlights": [
+                "Defined Customer-Centric SLOs For Core Journeys",
+                "Rolled Out Blue-Green Deployments And Feature Flags",
+                "Implemented Centralized Logging And Tracing For Faster Root Cause Analysis"
+            ],
+            "tags": [
+                "SRE",
+                "SLO",
+                "Feature Flags",
+                "Blue Green",
+                "Observability"
+            ]
+        }
+    ],
+    "education": [{
+        "area": "Computer Science",
+        "type": "Bachelor Of Science",
+        "organization": {
+            "name": "Arizona State University",
+            "location": {
+                "city": "Tempe",
+                "region": "Arizona",
+                "countryCode": "US"
+            }
+        },
+        "location": {
+            "city": "Tempe",
+            "region": "Arizona",
+            "countryCode": "US"
+        },
+        "startDate": "1994",
+        "endDate": "1998",
+        "score": "3.6",
+        "url": "https://www.asu.edu",
+        "courses": [{
+                "name": "Operating Systems",
+                "summary": "Processes, Scheduling, Synchronization, And Filesystems",
+                "format": "In Person"
+            },
+            {
+                "name": "Distributed Systems",
+                "summary": "Consensus, Replication, And Fault Tolerance",
+                "format": "In Person"
+            }
+        ]
+    }],
+    "skills": [{
+            "name": "DevOps",
+            "level": "Expert",
+            "tags": [
+                "Value Stream",
+                "WIP Limits",
+                "CI CD",
+                "Automation",
+                "Testing",
+                "Postmortems"
+            ],
+            "yearsOfExperience": 12
+        },
+        {
+            "name": "Leadership",
+            "level": "Expert",
+            "tags": [
+                "Change Management",
+                "OKR",
+                "Coaching",
+                "Stakeholder Management"
+            ],
+            "yearsOfExperience": 15
+        },
+        {
+            "name": "Cloud",
+            "level": "Advanced",
+            "tags": [
+                "AWS",
+                "GCP",
+                "IaC",
+                "Containers",
+                "Kubernetes"
+            ],
+            "yearsOfExperience": 8
+        },
+        {
+            "name": "Security",
+            "level": "Advanced",
+            "tags": [
+                "Shift Left",
+                "Threat Modeling",
+                "Policy As Code"
+            ],
+            "yearsOfExperience": 6
+        }
+    ],
+    "awards": [{
+        "title": "Technology Leadership Award",
+        "issuer": {
+            "name": "Arizona Technology Council",
+            "location": {
+                "city": "Phoenix",
+                "region": "Arizona",
+                "countryCode": "US"
+            }
+        },
+        "date": "2015-11",
+        "location": {
+            "city": "Phoenix",
+            "region": "Arizona",
+            "countryCode": "US"
+        },
+        "summary": "Recognized For Transforming Enterprise Delivery And Restoring Mission Critical Services.",
+        "tags": [
+            "Leadership",
+            "Transformation",
+            "DevOps"
+        ]
+    }],
+    "certificates": [{
+        "name": "Professional Cloud Architect",
+        "issuer": {
+            "name": "Google Cloud",
+            "location": {
+                "city": "Sunnyvale",
+                "region": "California",
+                "countryCode": "US"
+            }
+        },
+        "date": "2020-06",
+        "url": "https://cloud.google.com/certification"
+    }],
+    "languages": [{
+            "name": "English",
+            "countryCode": "US",
+            "fluency": "Native"
+        },
+        {
+            "name": "Spanish",
+            "countryCode": "ES",
+            "fluency": "Professional"
+        }
+    ],
+    "interests": [{
+            "name": "Lean Manufacturing",
+            "summary": "Applying Lean Principles To Knowledge Work And Technology Delivery.",
+            "tags": [
+                "Kaizen",
+                "Flow",
+                "Systems Thinking"
+            ]
+        },
+        {
+            "name": "Running",
+            "summary": "Long Distance Training And Community Races.",
+            "tags": [
+                "Marathon",
+                "Endurance",
+                "Health"
+            ]
+        }
+    ],
+    "volunteers": [{
+        "organization": {
+            "name": "Devops Days Phoenix",
+            "location": {
+                "city": "Phoenix",
+                "region": "Arizona",
+                "countryCode": "US"
+            },
+            "description": "Community Conference For Practitioners"
+        },
+        "position": "Program Committee Member",
+        "startDate": "2016-01",
+        "endDate": "2018-12",
+        "summary": "Curated Talks, Mentored Speakers, And Facilitated Open Spaces.",
+        "highlights": [
+            "Increased Local Practitioner Participation",
+            "Launched First Incident Response Game Day Track"
+        ],
+        "tags": [
+            "Community",
+            "Mentoring",
+            "Program Management"
+        ],
+        "url": "https://devopsdays.org"
+    }],
+    "publications": [{
+        "name": "From Firefighting To Flow: A Practical Guide For Enterprise IT",
+        "authors": [
+            "Bill Palmer"
+        ],
+        "publisher": {
+            "name": "Parts Unlimited Press",
+            "location": {
+                "city": "Scottsdale",
+                "region": "Arizona",
+                "countryCode": "US"
+            }
+        },
+        "date": "2016-09",
+        "type": "Whitepaper",
+        "summary": "Lessons Learned Scaling DevOps And Lean Practices Across A Traditional Enterprise.",
+        "tags": [
+            "DevOps",
+            "Lean",
+            "SRE"
+        ],
+        "url": "https://partsunlimited.example.com/whitepapers/flow"
+    }],
+    "references": [{
+            "name": "Steve Masters",
+            "position": "Chief Executive Officer",
+            "organization": {
+                "name": "Parts Unlimited"
+            },
+            "date": "2017-12",
+            "testimonial": "Bill Led A Cultural And Technical Transformation That Returned Our Technology Organization To High Performance.",
+            "contact": {
+                "email": "steve.masters@partsunlimited.example.com"
+            }
+        },
+        {
+            "name": "Wes Davis",
+            "position": "Director Of Security",
+            "organization": {
+                "name": "Parts Unlimited"
+            },
+            "date": "2016-03",
+            "testimonial": "He Brought Security Into The Delivery Process Without Slowing Down The Business.",
+            "contact": {
+                "email": "wes.davis@partsunlimited.example.com"
+            }
+        }
+    ],
+    "meta": {
+        "lastModified": "2025-08-12",
+        "schema": "@universal-resume/v1.2.0"
+    }
 }

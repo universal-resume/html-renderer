@@ -1,11 +1,11 @@
 import type { Resume } from "@universal-resume/ts-schema";
 import type { Theme } from "./renderer";
-import { origin } from "./template/origin";
+import { chronology } from "./template/chronology";
 
 export const TEMPLATES = {
-	origin: origin,
+	chronology: chronology,
 } as const;
-const DEFAULT_TEMPLATE: TemplateId = "origin";
+const DEFAULT_TEMPLATE: TemplateId = "chronology";
 
 export type TemplateId = keyof typeof TEMPLATES;
 
@@ -78,7 +78,7 @@ export const Template = (id: TemplateId = DEFAULT_TEMPLATE) => {
 		};
 
 		domElement.id = `page-${index + 1}`;
-		domElement.classList.add("page", "flex");
+		domElement.classList.add("page");
 
 		pages.push(page);
 

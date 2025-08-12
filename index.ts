@@ -5,9 +5,12 @@ window.addEventListener("load", async () => {
 	const resumeJson = await resume.json();
 
 	Renderer(resumeJson, {
-		template: "origin",
+		template: "chronology",
 		theme: {
-			color: "blue",
+			color: {
+				primary: "indigo",
+				secondary: "rose",
+			},
 		},
 		domElement: "resume",
 	}).catch((e) => {

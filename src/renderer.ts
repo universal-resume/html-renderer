@@ -6,7 +6,10 @@ import type { TemplateId } from "./template";
 import { Template } from "./template";
 
 export type Theme = {
-	color: string;
+	color: {
+		primary: string;
+		secondary: string;
+	};
 };
 
 type Config = {
@@ -15,7 +18,9 @@ type Config = {
 	template: TemplateId;
 };
 
-const DEFAULT_THEME: Theme = { color: "blue" };
+const DEFAULT_THEME: Theme = {
+	color: { primary: "emerald", secondary: "yellow" },
+};
 
 export async function Renderer(json: object, config?: Config) {
 	const decode = Schema.decodeUnknown(Resume.Schema)({
