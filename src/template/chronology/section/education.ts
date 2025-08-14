@@ -1,10 +1,11 @@
 import type { Theme } from "@renderer";
 import type { Education } from "@universal-resume/ts-schema";
-import { DateHtmlElement } from "../component/date";
+import { DateHtmlElement, SubDateHtmlElement } from "../component/date";
 import { SectionLayout } from "../component/layout";
 import { LinkHtmlElement } from "../component/link";
 import { LocationHtmlElement } from "../component/location";
-import { TitleAndTypeHtmlElement } from "../component/title-and-type";
+import { TitleHtmlElement } from "../component/title";
+import { TypeHtmlElement } from "../component/type";
 
 export const Courses = (
 	courses: Education.Type["courses"] | undefined,
@@ -30,13 +31,9 @@ export function EducationHtmlElement(
 	return {
 		build: () => {
 			const main = `
-				${TitleAndTypeHtmlElement(
-					{
-						title: `<span class="text-sm"><strong>${type}</strong> in <strong>${area}</strong></span>`,
-						type: "education",
-					},
-					theme.color.secondary,
-				)}
+				${TitleHtmlElement({
+					title: `<span class="text-sm"><strong>${type}</strong> in <strong>${area}</strong></span>`,
+				})}
                 <div class="flex gap-1">
                     <span class="text-sm font-semibold">${organization.name}</span>
                     ${LinkHtmlElement(url, theme)}
@@ -44,7 +41,7 @@ export function EducationHtmlElement(
                 ${LocationHtmlElement(location, theme)}
                 ${Courses(courses)}
             `;
-			const sidebar = DateHtmlElement({ startDate, endDate });
+			const sidebar = `${DateHtmlElement({ startDate, endDate })} ${TypeHtmlElement({ type: "education" }, theme.color.secondary)} ${SubDateHtmlElement({ startDate, endDate })}`;
 			return SectionLayout("education", index, theme, main, sidebar);
 		},
 	};

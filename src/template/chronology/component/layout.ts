@@ -25,7 +25,18 @@ export const SectionLayout = (
 	const mainContainer = document.createElement("div");
 	mainContainer.classList.add("w-3/4", "px-4");
 	const border = document.createElement("div");
-	border.classList.add("border-t", `border-${theme.color.primary}-200`, "py-4");
+	if (section !== "reference") {
+		border.classList.add(
+			"border-t",
+			`border-${theme.color.primary}-200`,
+			"py-4",
+			"flex",
+			"flex-col",
+			"items-center",
+		);
+	} else {
+		border.classList.add("pb-4");
+	}
 	mainContainer.appendChild(border);
 
 	container.appendChild(sidebarContainer);

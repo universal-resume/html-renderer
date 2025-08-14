@@ -69,7 +69,8 @@ export function HeaderHtmlElement(
 														: generateAvatarFromName(basics.name)
 												}
                     </div>
-                    <table class="text-white mx-auto mt-4">
+					<div class="px-4">
+                    <table class="text-white mx-auto mt-4 text-sm">
                         ${
 													basics.location?.city
 														? `
@@ -113,6 +114,7 @@ export function HeaderHtmlElement(
 													)
 													.join("")}
                         </table>
+					</div>
                         ${
 													basics.contact?.email || basics.contact?.phone
 														? `
@@ -139,9 +141,13 @@ export function HeaderHtmlElement(
                 <div class="w-3/4 flex flex-col justify-between">
                     <div class="grid justify-items-end px-4">
                         <div class="w-full flex justify-between">
-							${basics.availability ? `
+							${
+								basics.availability
+									? `
 							<div class="m-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-1.5 py-0.5 bg-${theme.color.secondary}-200 text-${theme.color.secondary}-700 rounded-full">Available ${basics.availability}</div>
-							` : `<div></div>`}
+							`
+									: `<div></div>`
+							}
                         	<h1 class="text-2xl font-extrabold">${basics.name}</h1>
 						</div>
                         <p class="text-lg mt-1">${basics.headline}</p>

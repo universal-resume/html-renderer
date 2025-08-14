@@ -31,18 +31,42 @@ export const DateHtmlElement = ({
 	if (date) {
 		return `
 			<span class="text-xs text-white font-bold">${date.toLocaleString("en-US", { month: "short", year: "numeric" })}</span>
-			<span class="text-xs text-white ">${diffInYearsAndMonths(date, new Date())} ago</span>
 		`;
 	}
 	if (startDate && !endDate) {
 		return `
-		<span class="text-xs text-white font-bold">Until ${startDate.toLocaleString("en-US", { month: "short", year: "numeric" })}</span>
-			<span class="text-xs text-white ">${diffInYearsAndMonths(startDate, new Date())}</span>
+		<span class="text-xs text-white font-bold">From ${startDate.toLocaleString("en-US", { month: "short", year: "numeric" })}</span>
 		`;
 	}
 	if (startDate && endDate) {
 		return `
 			<span class="text-xs text-white font-bold">${startDate.toLocaleString("en-US", { month: "short", year: "numeric" })} ➜ ${endDate.toLocaleString("en-US", { month: "short", year: "numeric" })}</span>
+		`;
+	}
+	return "";
+};
+
+export const SubDateHtmlElement = ({
+	date,
+	startDate,
+	endDate,
+}: {
+	date?: Date | undefined;
+	startDate?: Date | undefined;
+	endDate?: Date | undefined;
+}): string => {
+	if (date) {
+		return `
+			<span class="text-xs text-white ">${diffInYearsAndMonths(date, new Date())} ago</span>
+		`;
+	}
+	if (startDate && !endDate) {
+		return `
+			<span class="text-xs text-white ">${diffInYearsAndMonths(startDate, new Date())}</span>
+		`;
+	}
+	if (startDate && endDate) {
+		return `
 			<span class="text-xs text-white ">For ${diffInYearsAndMonths(startDate, endDate)}</span>
 		`;
 	}

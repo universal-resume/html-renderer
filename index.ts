@@ -1,3 +1,4 @@
+import { examples } from "@universal-resume/json-examples";
 import { Renderer } from "./src/renderer";
 
 window.addEventListener("load", async () => {

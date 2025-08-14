@@ -3,33 +3,28 @@ import type {
 	Award,
 	Certificate,
 	Education,
-	Project,
+	Employment,
+	Initiative,
 	Publication,
-	Reference,
 	Resume,
-	Volunteer,
-	Work,
 } from "@universal-resume/ts-schema";
 import type { RendererActions } from "../template";
 import { AwardHtmlElement } from "./chronology/section/award";
 import { CertificateHtmlElement } from "./chronology/section/certificate";
 import { EducationHtmlElement } from "./chronology/section/education";
+import { EmploymentHtmlElement } from "./chronology/section/employment";
 import { HeaderHtmlElement } from "./chronology/section/header";
-import { ProjectHtmlElement } from "./chronology/section/project";
+import { InitiativeHtmlElement } from "./chronology/section/initiative";
 import { PublicationHtmlElement } from "./chronology/section/publication";
 import { ReferenceHtmlElement } from "./chronology/section/reference";
-import { VolunteerHtmlElement } from "./chronology/section/volunteer";
-import { WorkHtmlElement } from "./chronology/section/work";
 
 type Chronology = Array<
-	| { __tag: "work"; item: Work.Type; date: Date }
+	| { __tag: "employment"; item: Employment.Type; date: Date }
 	| { __tag: "education"; item: Education.Type; date: Date }
 	| { __tag: "award"; item: Award.Type; date: Date }
 	| { __tag: "certificate"; item: Certificate.Type; date: Date }
-	| { __tag: "project"; item: Project.Type; date: Date }
+	| { __tag: "initiative"; item: Initiative.Type; date: Date }
 	| { __tag: "publication"; item: Publication.Type; date: Date }
-	| { __tag: "volunteer"; item: Volunteer.Type; date: Date }
-	| { __tag: "reference"; item: Reference.Type; date: Date }
 >;
 
 type CurrentPage = {
@@ -40,16 +35,16 @@ type CurrentPage = {
 
 const fromResume = (resume: Resume.Type): Chronology => {
 	const chronology: Chronology = [];
-	if (resume.work) {
+	if (resume.employments && resume.employments.length > 0) {
 		chronology.push(
-			...resume.work.map((work) => ({
-				__tag: "work" as const,
-				item: work,
-				date: work.startDate,
+			...resume.employments.map((employment) => ({
+				__tag: "employment" as const,
+				item: employment,
+				date: employment.startDate,
 			})),
 		);
 	}
-	if (resume.education) {
+	if (resume.education && resume.education.length > 0) {
 		chronology.push(
 			...resume.education.map((education) => ({
 				__tag: "education" as const,
@@ -58,7 +53,7 @@ const fromResume = (resume: Resume.Type): Chronology => {
 			})),
 		);
 	}
-	if (resume.awards) {
+	if (resume.awards && resume.awards.length > 0) {
 		chronology.push(
 			...resume.awards.map((award) => ({
 				__tag: "award" as const,
@@ -67,48 +62,30 @@ const fromResume = (resume: Resume.Type): Chronology => {
 			})),
 		);
 	}
-	if (resume.certificates) {
+	if (resume.certificates && resume.certificates.length > 0) {
 		chronology.push(
 			...resume.certificates.map((certificate) => ({
 				__tag: "certificate" as const,
 				item: certificate,
 				date: certificate.date,
 			})),
-		); // TODO: add date
+		);
 	}
-	if (resume.projects) {
+	if (resume.initiatives && resume.initiatives.length > 0) {
 		chronology.push(
-			...resume.projects.map((project) => ({
-				__tag: "project" as const,
-				item: project,
-				date: project.startDate,
+			...resume.initiatives.map((initiative) => ({
+				__tag: "initiative" as const,
+				item: initiative,
+				date: initiative.startDate,
 			})),
 		);
 	}
-	if (resume.publications) {
+	if (resume.publications && resume.publications.length > 0) {
 		chronology.push(
 			...resume.publications.map((publication) => ({
 				__tag: "publication" as const,
 				item: publication,
 				date: publication.date,
-			})),
-		); // TODO: add date
-	}
-	if (resume.volunteers) {
-		chronology.push(
-			...resume.volunteers.map((volunteer) => ({
-				__tag: "volunteer" as const,
-				item: volunteer,
-				date: volunteer.startDate,
-			})),
-		);
-	}
-	if (resume.references) {
-		chronology.push(
-			...resume.references.map((reference) => ({
-				__tag: "reference" as const,
-				item: reference,
-				date: reference.date,
 			})),
 		);
 	}
@@ -230,8 +207,8 @@ export async function chronology(
 	for (const [index, section] of sections.entries()) {
 		let htmlElement: HTMLElement;
 		switch (section.__tag) {
-			case "work":
-				htmlElement = WorkHtmlElement(section.item, theme, index).build();
+			case "employment":
+				htmlElement = EmploymentHtmlElement(section.item, theme, index).build();
 				break;
 			case "education":
 				htmlElement = EducationHtmlElement(section.item, theme, index).build();
@@ -246,8 +223,8 @@ export async function chronology(
 					index,
 				).build();
 				break;
-			case "project":
-				htmlElement = ProjectHtmlElement(section.item, theme, index).build();
+			case "initiative":
+				htmlElement = InitiativeHtmlElement(section.item, theme, index).build();
 				break;
 			case "publication":
 				htmlElement = PublicationHtmlElement(
@@ -256,13 +233,29 @@ export async function chronology(
 					index,
 				).build();
 				break;
-			case "volunteer":
-				htmlElement = VolunteerHtmlElement(section.item, theme, index).build();
-				break;
-			case "reference":
-				htmlElement = ReferenceHtmlElement(section.item, theme, index).build();
-				break;
 		}
 		page = await addSection(page, htmlElement, theme, actions);
+		if (
+			(section.__tag === "employment" || section.__tag === "initiative") &&
+			section.item.references &&
+			section.item.references.length > 0
+		) {
+			const references = section.item.references;
+			for (const reference of references) {
+				if (reference.name && reference.testimonial) {
+					const referenceHtml = ReferenceHtmlElement(
+						{
+							name: reference.name,
+							testimonial: reference.testimonial,
+							position: reference.position,
+							organization: section.item.organization,
+						},
+						theme,
+						index,
+					).build();
+					page = await addSection(page, referenceHtml, theme, actions);
+				}
+			}
+		}
 	}
 }

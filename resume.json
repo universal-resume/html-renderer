@@ -1,395 +1,252 @@
 {
     "basics": {
-        "headline": "IT Leader - DevOps & Business",
-        "availability": "ASAP",
+        "headline": "Vice President of IT Operations",
         "name": "Bill Palmer",
-        "birth": "1976-05-17",
-        "remote": true,
+        "availability": "ASAP",
         "location": {
-            "city": "Scottsdale",
-            "region": "Arizona",
+            "city": "Parts Unlimited Headquarters",
             "countryCode": "US",
-            "postalCode": "85251"
+            "region": "Midwest"
         },
         "contact": {
             "email": "bill.palmer@example.com",
-            "phone": "+1-480-555-0134",
-            "website": "https://billpalmer.example.com",
-            "linkedin": "https://www.linkedin.com/in/bill-palmer",
-            "telegram": "@BillPalmerIT"
+            "phone": "+15551234567",
+            "linkedin": "https://www.linkedin.com/in/bill-palmer"
         },
+        "summary": "IT operations leader charged with stabilizing business-critical systems and rescuing the Phoenix ERP program. Pragmatic, business-first problem solver who builds trust, flow, and collaboration across Development, Operations, and Security.",
         "profiles": [{
-                "network": "Linkedin",
+                "network": "LinkedIn",
                 "url": "https://www.linkedin.com/in/bill-palmer",
                 "username": "bill-palmer"
             },
             {
                 "network": "Github",
-                "url": "https://github.com/billpalmer",
-                "username": "billpalmer"
+                "url": "https://github.com/bill-palmer",
+                "username": "bill-palmer"
             }
         ],
-        "summary": "Promoted from Operations to lead a failing Digital Transformation and turn around mission-critical projects. Built a culture of Flow, Feedback, And Continuous Learning across Development, Operations, And Security. Delivered business results through Lean, Agile, And DevOps practices."
+        "remote": false
     },
-    "work": [{
+    "employments": [{
+            "type": "internal",
             "organization": {
                 "name": "Parts Unlimited",
                 "location": {
-                    "city": "Scottsdale",
-                    "region": "Arizona",
+                    "city": "Parts Unlimited Headquarters",
                     "countryCode": "US"
                 },
-                "description": "Fortune 500 Retailer Of Automotive Parts"
+                "description": "A national retail and e-commerce company undergoing major IT modernization."
             },
-            "position": "Chief Information Officer",
-            "startDate": "2014-06",
-            "endDate": "2017-12",
-            "summary": "Led Enterprise Technology Strategy, Stabilized Core Systems, And Scaled DevOps Practices Across The Organization.",
+            "position": "Vice President of IT Operations",
+            "startDate": "2021-01",
+            "summary": "Promoted to lead IT Operations with a mandate to restore service reliability, align IT delivery to business outcomes, and turn around the Phoenix Project.",
             "highlights": [
-                "Reduced Critical Incident Frequency By 80% Within 12 Months",
-                "Cut Lead Time For Changes From Weeks To Hours Through CI/CD And Automated Testing",
-                "Created A Unified Business Technology Roadmap Aligning Marketing, Retail, And Supply Chain",
-                "Institutionalized Blameless Postmortems And SLOs Across All Product Teams"
+                "Restored stability of revenue-impacting systems within first 90 days",
+                "Established cross-functional change advisory process to reduce failed changes",
+                "Reduced mean time to recovery (MTTR) by introducing blameless postmortems",
+                "Partnered with Development and Security to implement a CI/CD pipeline for core services"
             ],
+            "references": [{
+                "date": "2022-06",
+                "name": "Steve Masters",
+                "position": "Chief Executive Officer",
+                "contact": {
+                    "email": "steve.masters@example.com",
+                    "linkedin": "https://www.linkedin.com/in/steve-masters"
+                },
+                "testimonial": "Bill brought calm leadership and business alignment to our most critical technology initiatives. The turnaround of Phoenix was pivotal."
+            }],
             "tags": [
                 "Leadership",
                 "DevOps",
-                "Lean",
-                "Agile",
-                "SRE",
-                "ITIL",
+                "Incident Management",
                 "Change Management",
-                "Cloud",
-                "Security"
+                "Service Reliability"
             ],
             "url": "https://www.partsunlimited.example.com"
         },
         {
+            "type": "internal",
             "organization": {
                 "name": "Parts Unlimited",
                 "location": {
-                    "city": "Scottsdale",
-                    "region": "Arizona",
+                    "city": "Parts Unlimited Headquarters",
                     "countryCode": "US"
                 },
-                "description": "Fortune 500 Retailer Of Automotive Parts"
+                "description": "A national retail and e-commerce company."
             },
-            "position": "Vice President Of IT Operations",
-            "startDate": "2013-02",
-            "endDate": "2014-06",
-            "summary": "Brought In To Rescue The Phoenix Program And Stabilize Customer-Facing Systems.",
+            "position": "Director of Midrange Technology Operations",
+            "startDate": "2018-03",
+            "endDate": "2020-12",
+            "summary": "Led the team responsible for order processing, inventory, and fulfillment platforms on midrange systems.",
             "highlights": [
-                "Stood Up Cross-Functional War Room To Restore Revenue-Generating Website During Peak Season",
-                "Mapped Value Streams And Eliminated Hand-Offs, Improving Flow And Throughput",
-                "Partnered With Security To Shift Left And Automate Controls",
-                "Established Visible Work Boards And WIP Limits Across Teams"
+                "Achieved 99.9% availability for order management systems",
+                "Introduced capacity planning that prevented peak-season outages",
+                "Implemented proactive monitoring with clear SLOs and escalation paths"
             ],
             "tags": [
-                "Incident Response",
-                "Value Stream",
-                "Continuous Delivery",
-                "Automation",
+                "Operations",
+                "Infrastructure",
                 "Monitoring",
-                "Observability"
-            ]
-        },
-        {
-            "organization": {
-                "name": "Parts Unlimited",
-                "location": {
-                    "city": "Scottsdale",
-                    "region": "Arizona",
-                    "countryCode": "US"
-                }
-            },
-            "position": "Director Of Midrange Operations",
-            "startDate": "2010-05",
-            "endDate": "2013-02",
-            "summary": "Owned Legacy Systems And Data Center Operations While Championing Early DevOps Practices.",
-            "highlights": [
-                "Consolidated Tooling And Standardized Deployment Pipelines",
-                "Introduced Configuration Management And Immutable Build Artifacts",
-                "Reduced Mean Time To Recovery From Hours To Minutes"
-            ],
-            "tags": [
-                "Configuration Management",
-                "Release Engineering",
-                "Automation",
-                "Resilience"
+                "SRE Practices"
             ]
         }
     ],
-    "projects": [{
-            "name": "Phoenix Program Turnaround",
-            "organization": {
-                "name": "Parts Unlimited"
-            },
-            "position": "Program Lead",
-            "type": "Transformation",
-            "status": "Completed",
-            "startDate": "2013-02",
-            "endDate": "2014-03",
-            "summary": "Rescued A Failing Digital Initiative Threatening Company Viability. Rebuilt Teams Around Flow, Feedback, And Learning.",
-            "highlights": [
-                "Created A Single Piece Of Work Policy And Limited WIP Across Value Streams",
-                "Established Continuous Integration With Automated Unit, Integration, And Security Tests",
-                "Aligned Business Stakeholders With Product Teams Using Quarterly Planning And OKRs"
-            ],
+    "skills": [{
+            "name": "Leadership",
+            "level": "expert",
+            "yearsOfExperience": 15,
             "tags": [
-                "DevOps",
-                "Lean",
-                "Agile",
-                "OKR",
-                "CI",
-                "Testing"
-            ],
-            "url": "https://phoenix.partsunlimited.example.com"
+                "Team Building",
+                "Stakeholder Management"
+            ]
         },
         {
-            "name": "Retail Website Reliability Initiative",
-            "organization": {
-                "name": "Parts Unlimited"
-            },
-            "position": "Sponsor",
-            "type": "Platform",
-            "status": "Completed",
-            "startDate": "2014-08",
-            "endDate": "2015-06",
-            "summary": "Introduced SLOs, Error Budgets, And Observability To Improve Customer Experience.",
-            "highlights": [
-                "Defined Customer-Centric SLOs For Core Journeys",
-                "Rolled Out Blue-Green Deployments And Feature Flags",
-                "Implemented Centralized Logging And Tracing For Faster Root Cause Analysis"
-            ],
+            "name": "IT Service Management",
+            "level": "advanced",
+            "yearsOfExperience": 10,
             "tags": [
-                "SRE",
-                "SLO",
-                "Feature Flags",
-                "Blue Green",
-                "Observability"
+                "Incident Management",
+                "Problem Management",
+                "Change Control"
+            ]
+        },
+        {
+            "name": "DevOps",
+            "level": "advanced",
+            "yearsOfExperience": 6,
+            "tags": [
+                "CI/CD",
+                "Agile",
+                "Value Stream Mapping"
+            ]
+        },
+        {
+            "name": "Site Reliability Engineering",
+            "level": "advanced",
+            "yearsOfExperience": 4,
+            "tags": [
+                "SLI/SLO",
+                "Error Budgets",
+                "Postmortems"
             ]
         }
     ],
     "education": [{
-        "area": "Computer Science",
-        "type": "Bachelor Of Science",
+        "area": "Information Systems",
         "organization": {
-            "name": "Arizona State University",
+            "name": "State University",
             "location": {
-                "city": "Tempe",
-                "region": "Arizona",
+                "city": "Springfield",
                 "countryCode": "US"
             }
         },
-        "location": {
-            "city": "Tempe",
-            "region": "Arizona",
-            "countryCode": "US"
-        },
-        "startDate": "1994",
-        "endDate": "1998",
-        "score": "3.6",
-        "url": "https://www.asu.edu",
-        "courses": [{
-                "name": "Operating Systems",
-                "summary": "Processes, Scheduling, Synchronization, And Filesystems",
-                "format": "In Person"
-            },
-            {
-                "name": "Distributed Systems",
-                "summary": "Consensus, Replication, And Fault Tolerance",
-                "format": "In Person"
-            }
-        ]
+        "startDate": "1999",
+        "endDate": "2003",
+        "type": "Bachelor of Science",
+        "url": "https://www.stateuniversity.example.edu"
     }],
-    "skills": [{
-            "name": "DevOps",
-            "level": "Expert",
-            "tags": [
-                "Value Stream",
-                "WIP Limits",
-                "CI CD",
-                "Automation",
-                "Testing",
-                "Postmortems"
-            ],
-            "yearsOfExperience": 12
-        },
-        {
-            "name": "Leadership",
-            "level": "Expert",
-            "tags": [
-                "Change Management",
-                "OKR",
-                "Coaching",
-                "Stakeholder Management"
-            ],
-            "yearsOfExperience": 15
-        },
-        {
-            "name": "Cloud",
-            "level": "Advanced",
-            "tags": [
-                "AWS",
-                "GCP",
-                "IaC",
-                "Containers",
-                "Kubernetes"
-            ],
-            "yearsOfExperience": 8
-        },
-        {
-            "name": "Security",
-            "level": "Advanced",
-            "tags": [
-                "Shift Left",
-                "Threat Modeling",
-                "Policy As Code"
-            ],
-            "yearsOfExperience": 6
-        }
-    ],
-    "awards": [{
-        "title": "Technology Leadership Award",
-        "issuer": {
-            "name": "Arizona Technology Council",
+    "initiatives": [{
+        "summary": "Cross-functional transformation program to increase deployment frequency, improve stability, and accelerate feedback loops across Development, Operations, and Security.",
+        "endDate": "2022-12",
+        "organization": {
+            "name": "Parts Unlimited",
             "location": {
-                "city": "Phoenix",
-                "region": "Arizona",
+                "city": "Parts Unlimited Headquarters",
                 "countryCode": "US"
             }
         },
-        "date": "2015-11",
+        "highlights": [
+            "Increased deployment frequency from monthly to weekly for core services",
+            "Cut change failure rate by 40% through peer reviews and automated testing",
+            "Introduced value stream mapping workshops to identify and remove bottlenecks"
+        ],
         "location": {
-            "city": "Phoenix",
-            "region": "Arizona",
+            "city": "Parts Unlimited Headquarters",
             "countryCode": "US"
         },
-        "summary": "Recognized For Transforming Enterprise Delivery And Restoring Mission Critical Services.",
+        "name": "Phoenix Project DevOps Transformation",
+        "position": "Program Lead",
+        "references": [{
+            "date": "2022-11",
+            "name": "Erik Reid",
+            "position": "Advisor",
+            "testimonial": "Bill embraced the Three Ways—flow, feedback, and continual learning—and institutionalized them.",
+            "contact": {
+                "email": "erik.reid@example.com"
+            }
+        }],
+        "startDate": "2021-02",
+        "status": "Completed",
         "tags": [
-            "Leadership",
             "Transformation",
-            "DevOps"
-        ]
+            "DevOps",
+            "Culture"
+        ],
+        "type": "open-source",
+        "url": "https://intranet.partsunlimited.example.com/phoenix"
     }],
     "certificates": [{
-        "name": "Professional Cloud Architect",
+        "date": "2020-05",
         "issuer": {
-            "name": "Google Cloud",
+            "name": "AXELOS",
             "location": {
-                "city": "Sunnyvale",
-                "region": "California",
-                "countryCode": "US"
-            }
-        },
-        "date": "2020-06",
-        "url": "https://cloud.google.com/certification"
-    }],
-    "languages": [{
-            "name": "English",
-            "countryCode": "US",
-            "fluency": "Native"
-        },
-        {
-            "name": "Spanish",
-            "countryCode": "ES",
-            "fluency": "Professional"
-        }
-    ],
-    "interests": [{
-            "name": "Lean Manufacturing",
-            "summary": "Applying Lean Principles To Knowledge Work And Technology Delivery.",
-            "tags": [
-                "Kaizen",
-                "Flow",
-                "Systems Thinking"
-            ]
-        },
-        {
-            "name": "Running",
-            "summary": "Long Distance Training And Community Races.",
-            "tags": [
-                "Marathon",
-                "Endurance",
-                "Health"
-            ]
-        }
-    ],
-    "volunteers": [{
-        "organization": {
-            "name": "Devops Days Phoenix",
-            "location": {
-                "city": "Phoenix",
-                "region": "Arizona",
-                "countryCode": "US"
+                "city": "London",
+                "countryCode": "GB"
             },
-            "description": "Community Conference For Practitioners"
+            "description": "Global best practice owner for ITIL."
         },
-        "position": "Program Committee Member",
-        "startDate": "2016-01",
-        "endDate": "2018-12",
-        "summary": "Curated Talks, Mentored Speakers, And Facilitated Open Spaces.",
-        "highlights": [
-            "Increased Local Practitioner Participation",
-            "Launched First Incident Response Game Day Track"
-        ],
+        "name": "ITIL Foundation Certificate in IT Service Management",
+        "summary": "Validated knowledge of ITIL concepts for incident, problem, and change management.",
+        "url": "https://www.axelos.com/certifications/itil-foundation",
         "tags": [
-            "Community",
-            "Mentoring",
-            "Program Management"
-        ],
-        "url": "https://devopsdays.org"
+            "ITIL",
+            "Service Management"
+        ]
     }],
     "publications": [{
-        "name": "From Firefighting To Flow: A Practical Guide For Enterprise IT",
         "authors": [
             "Bill Palmer"
         ],
+        "doi": "PU-DX-2022-001",
+        "name": "From Firefighting to Flow: Lessons from the Phoenix Project",
         "publisher": {
-            "name": "Parts Unlimited Press",
+            "name": "Parts Unlimited",
             "location": {
-                "city": "Scottsdale",
-                "region": "Arizona",
+                "city": "Parts Unlimited Headquarters",
                 "countryCode": "US"
-            }
+            },
+            "description": "Internal and partner-facing publications."
         },
-        "date": "2016-09",
-        "type": "Whitepaper",
-        "summary": "Lessons Learned Scaling DevOps And Lean Practices Across A Traditional Enterprise.",
+        "date": "2022-10",
+        "summary": "A practical account of stabilizing critical systems and implementing DevOps practices to improve throughput and reliability.",
         "tags": [
             "DevOps",
-            "Lean",
-            "SRE"
+            "SRE",
+            "ITSM"
         ],
-        "url": "https://partsunlimited.example.com/whitepapers/flow"
+        "type": "presentation",
+        "url": "https://www.partsunlimited.example.com/resources/firefighting-to-flow"
     }],
-    "references": [{
-            "name": "Steve Masters",
-            "position": "Chief Executive Officer",
-            "organization": {
-                "name": "Parts Unlimited"
-            },
-            "date": "2017-12",
-            "testimonial": "Bill Led A Cultural And Technical Transformation That Returned Our Technology Organization To High Performance.",
-            "contact": {
-                "email": "steve.masters@partsunlimited.example.com"
-            }
+    "interests": [{
+            "name": "Lean Management",
+            "summary": "Applying Lean principles and the Three Ways to tech operations."
         },
         {
-            "name": "Wes Davis",
-            "position": "Director Of Security",
-            "organization": {
-                "name": "Parts Unlimited"
-            },
-            "date": "2016-03",
-            "testimonial": "He Brought Security Into The Delivery Process Without Slowing Down The Business.",
-            "contact": {
-                "email": "wes.davis@partsunlimited.example.com"
-            }
+            "name": "Motorcycling",
+            "tags": [
+                "Travel",
+                "Adventure"
+            ]
         }
     ],
+    "languages": [{
+        "name": "English",
+        "fluency": "fluent",
+        "countryCode": "US"
+    }],
     "meta": {
-        "lastModified": "2025-08-12",
-        "schema": "@universal-resume/v1.2.0"
+        "lastModified": "2025-08-14",
+        "schema": "universal-resume-v2.0.0"
     }
 }
