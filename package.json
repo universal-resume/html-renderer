@@ -1,21 +1,60 @@
 {
-    "name": "renderer",
-    "version": "1.0.0",
+    "name": "@universal-resume/html-renderer",
+    "version": "1.0.0-beta.1",
+    "description": "A TypeScript library for rendering resumes to HTML with customizable themes and templates",
     "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/types/index.d.ts",
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.umd.js"
+        }
+    },
+    "types": "dist/types/index.d.ts",
+    "main": "./dist/index.umd.js",
+    "module": "./dist/index.es.js",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
     "scripts": {
         "serve": "vite",
         "build": "vite build",
         "check": "biome check .",
         "format": "biome format --write .",
-        "lint": "biome lint --write ."
+        "lint": "biome lint --write .",
+        "prepublishOnly": "npm run build"
     },
+    "keywords": [
+        "resume",
+        "html",
+        "renderer",
+        "typescript",
+        "template",
+        "cv"
+    ],
+    "author": "Universal Resume",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/universal-resume/html-renderer.git"
+    },
+    "bugs": {
+        "url": "https://github.com/universal-resume/html-renderer/issues"
+    },
+    "homepage": "https://github.com/universal-resume/html-renderer#readme",
     "devDependencies": {
         "@biomejs/biome": "^2.1.2",
+        "typescript": "^5.0.0",
         "vite": "^6.3.5",
-        "vitest": "^3.2.4"
+        "vite-plugin-dts": "^4.5.4"
     },
     "dependencies": {
         "@universal-resume/ts-schema": "2.0.0",
         "effect": "^3.17.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
     }
 }

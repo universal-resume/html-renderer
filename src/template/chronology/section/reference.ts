@@ -1,6 +1,6 @@
-import type { Theme } from "@renderer";
-import { SectionLayout } from "../component/layout";
-import { TypeHtmlElement } from "../component/type";
+import type { Theme } from "../../../renderer.js";
+import { SectionLayout } from "../component/layout.js";
+import { TypeHtmlElement } from "../component/type.js";
 
 export function ReferenceHtmlElement(
 	{
