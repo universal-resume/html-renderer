@@ -1,9 +1,9 @@
 import { Resume } from "@universal-resume/ts-schema";
 import { Effect, Schema } from "effect";
 import { isFailure, isSuccess } from "effect/Exit";
-import { formater } from "./renderer/formater";
-import type { TemplateId } from "./template";
-import { Template } from "./template";
+import { formater } from "./renderer/formater.js";
+import type { TemplateId } from "./template.js";
+import { Template } from "./template.js";
 
 export type Theme = {
 	color: {
@@ -12,17 +12,17 @@ export type Theme = {
 	};
 };
 
-type Config = {
-	domElement: string;
-	theme: Theme;
-	template: TemplateId;
+export type Config = {
+	domElement: HTMLElement;
+	theme?: Theme;
+	template?: TemplateId;
 };
 
-const DEFAULT_THEME: Theme = {
+export const DEFAULT_THEME: Theme = {
 	color: { primary: "emerald", secondary: "yellow" },
 };
 
-export async function Renderer(json: object, config?: Config) {
+export async function Renderer(json: object, config: Config) {
 	const decode = Schema.decodeUnknown(Resume.Schema)({
 		...json,
 		meta: {},
@@ -34,17 +34,11 @@ export async function Renderer(json: object, config?: Config) {
 		throw new Error(`Malformed resume: ${resume.cause.error}`);
 	}
 
-	const domElement = document.getElementById(config?.domElement || "resume");
-
-	if (!domElement) {
-		throw new Error(`DOM element "${config?.domElement}" not found`);
-	}
-
 	if (isSuccess(resume)) {
-		domElement.innerHTML = "";
-		Template(config?.template).render(
+		config.domElement.innerHTML = "";
+		await Template(config?.template).render(
 			resume.value,
-			domElement,
+			config.domElement,
 			config?.theme || DEFAULT_THEME,
 		);
 	}

@@ -1,11 +1,11 @@
 import type { Resume } from "@universal-resume/ts-schema";
-import type { Theme } from "./renderer";
-import { chronology } from "./template/chronology";
+import type { Theme } from "./renderer.js";
+import { chronology } from "./template/chronology.js";
 
 export const TEMPLATES = {
 	chronology: chronology,
 } as const;
-const DEFAULT_TEMPLATE: TemplateId = "chronology";
+export const DEFAULT_TEMPLATE: TemplateId = "chronology";
 
 export type TemplateId = keyof typeof TEMPLATES;
 
@@ -90,11 +90,10 @@ export const Template = (id: TemplateId = DEFAULT_TEMPLATE) => {
 	const getPages = () => pages;
 
 	return {
-		render: (resume: Resume.Type, domElement: HTMLElement, theme: Theme) => {
-			return renderer(resume, theme, {
+		render: (resume: Resume.Type, domElement: HTMLElement, theme: Theme) =>
+			renderer(resume, theme, {
 				addPage: addPage(domElement),
 				getPages,
-			});
-		},
+			}),
 	};
 };
