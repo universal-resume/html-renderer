@@ -4,7 +4,7 @@
         "name": "Bill Palmer",
         "availability": "ASAP",
         "location": {
-            "city": "Parts Unlimited Headquarters",
+            "city": "Elkhart Grove",
             "countryCode": "US",
             "region": "Midwest"
         },
@@ -90,6 +90,31 @@
                 "Monitoring",
                 "SRE Practices"
             ]
+        },
+        {
+            "type": "internal",
+            "organization": {
+                "name": "Parts Unlimited",
+                "location": {
+                    "city": "Elkhart Grove",
+                    "countryCode": "US"
+                },
+                "description": "A large retail corporation specializing in automotive parts and accessories."
+            },
+            "position": "IT Operations Manager",
+            "startDate": "2014-05",
+            "endDate": "2018-02",
+            "summary": "Managed day-to-day IT operations for core business systems, supervising a cross-functional team of administrators and support engineers.",
+            "highlights": [
+                "Implemented a proactive incident management process reducing average downtime by 35%",
+                "Introduced standardized documentation for critical systems and processes",
+                "Coordinated with Development teams to schedule and execute non-disruptive maintenance windows"
+            ],
+            "tags": [
+                "Operations Management",
+                "Incident Response",
+                "Process Improvement"
+            ]
         }
     ],
     "skills": [{
@@ -144,48 +169,99 @@
         "startDate": "1999",
         "endDate": "2003",
         "type": "Bachelor of Science",
-        "url": "https://www.stateuniversity.example.edu"
+        "url": "https://www.stateuniversity.example.edu",
+        "courses": [{
+                "name": "Systems Analysis and Design",
+                "summary": "Covered the full system development lifecycle, from requirements gathering to deployment."
+            },
+            {
+                "name": "IT Project Management",
+                "summary": "Focus on planning, executing, and monitoring large-scale technology projects."
+            },
+            {
+                "name": "Network Infrastructure",
+                "summary": "Hands-on labs in configuring, securing, and troubleshooting enterprise networks."
+            },
+            {
+                "name": "Operations Management",
+                "summary": "Explored process optimization, capacity planning, and service delivery."
+            }
+        ]
     }],
     "initiatives": [{
-        "summary": "Cross-functional transformation program to increase deployment frequency, improve stability, and accelerate feedback loops across Development, Operations, and Security.",
-        "endDate": "2022-12",
-        "organization": {
-            "name": "Parts Unlimited",
+            "summary": "Cross-functional transformation program to increase deployment frequency, improve stability, and accelerate feedback loops across Development, Operations, and Security.",
+            "endDate": "2022-12",
+            "organization": {
+                "name": "Parts Unlimited",
+                "location": {
+                    "city": "Parts Unlimited Headquarters",
+                    "countryCode": "US"
+                }
+            },
+            "highlights": [
+                "Increased deployment frequency from monthly to weekly for core services",
+                "Cut change failure rate by 40% through peer reviews and automated testing",
+                "Introduced value stream mapping workshops to identify and remove bottlenecks"
+            ],
             "location": {
                 "city": "Parts Unlimited Headquarters",
                 "countryCode": "US"
-            }
+            },
+            "name": "Phoenix Project DevOps Transformation",
+            "position": "Program Lead",
+            "references": [{
+                "date": "2022-11",
+                "name": "Erik Reid",
+                "position": "Advisor",
+                "testimonial": "Bill embraced the Three Ways—flow, feedback, and continual learning—and institutionalized them.",
+                "contact": {
+                    "email": "erik.reid@example.com"
+                }
+            }],
+            "startDate": "2021-02",
+            "status": "Completed",
+            "tags": [
+                "Transformation",
+                "DevOps",
+                "Culture"
+            ],
+            "type": "open-source",
+            "url": "https://intranet.partsunlimited.example.com/phoenix"
         },
-        "highlights": [
-            "Increased deployment frequency from monthly to weekly for core services",
-            "Cut change failure rate by 40% through peer reviews and automated testing",
-            "Introduced value stream mapping workshops to identify and remove bottlenecks"
-        ],
-        "location": {
-            "city": "Parts Unlimited Headquarters",
-            "countryCode": "US"
-        },
-        "name": "Phoenix Project DevOps Transformation",
-        "position": "Program Lead",
-        "references": [{
-            "date": "2022-11",
-            "name": "Erik Reid",
-            "position": "Advisor",
-            "testimonial": "Bill embraced the Three Ways—flow, feedback, and continual learning—and institutionalized them.",
-            "contact": {
-                "email": "erik.reid@example.com"
-            }
-        }],
-        "startDate": "2021-02",
-        "status": "Completed",
-        "tags": [
-            "Transformation",
-            "DevOps",
-            "Culture"
-        ],
-        "type": "open-source",
-        "url": "https://intranet.partsunlimited.example.com/phoenix"
-    }],
+        {
+            "summary": "Co-founded a small IT consultancy offering infrastructure setup, cloud migration, and managed services for local businesses.",
+            "endDate": "2014-04",
+            "organization": {
+                "name": "TechBridge Solutions",
+                "location": {
+                    "city": "Springfield",
+                    "countryCode": "US"
+                },
+                "description": "IT services startup focused on helping SMBs modernize their technology stack."
+            },
+            "highlights": [
+                "Delivered infrastructure modernization projects for over 15 small-to-medium businesses",
+                "Designed a cloud migration framework that reduced client onboarding time by 30%",
+                "Built recurring revenue streams through managed IT service contracts"
+            ],
+            "location": {
+                "city": "Springfield",
+                "countryCode": "US"
+            },
+            "name": "TechBridge Solutions",
+            "position": "Co-Founder & Operations Lead",
+            "startDate": "2011-01",
+            "status": "Acquired",
+            "tags": [
+                "Startup",
+                "Cloud",
+                "Infrastructure",
+                "Operations"
+            ],
+            "type": "startup",
+            "url": "https://www.techbridgesolutions.example.com"
+        }
+    ],
     "certificates": [{
         "date": "2020-05",
         "issuer": {

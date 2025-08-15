@@ -15,7 +15,6 @@
         "vitest": "^3.2.4"
     },
     "dependencies": {
-        "@universal-resume/json-examples": "^0.1.0",
         "@universal-resume/ts-schema": "2.0.0",
         "effect": "^3.17.2"
     }

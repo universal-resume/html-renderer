@@ -11,7 +11,7 @@ export const Courses = (
 	courses: Education.Type["courses"] | undefined,
 ): string => {
 	if (!courses || courses.length === 0) return "";
-	return `<ul class="list-disc list-inside text-xs py-2">${courses.map((course) => `<li><strong>${course.name}</strong> ${course.summary ? `${course.summary}` : ""}</li>`).join("")}</ul>`;
+	return `<ul class="list-disc list-inside text-xs py-2">${courses.map((course) => `<li><strong>${course.name}</strong> ${course.summary ? `<br/> ${course.summary}` : ""}</li>`).join("")}</ul>`;
 };
 
 export function EducationHtmlElement(

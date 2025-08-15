@@ -15,6 +15,43 @@
 </head>
 
 <body class="min-h-screen min-w-screen bg-gray-100 flex justify-center">
+    <div class="absolute top-8 right-8 flex flex-col gap-4">
+        <button id="dropdownButtonResume" data-dropdown-toggle="dropdownResume" class="text-black border border-gray-300 flex justify-between bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+            type="button"> Resume <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+            </svg>
+        </button>
+        <button id="dropdownButtonPrimaryColor" data-dropdown-toggle="dropdownPrimaryColor" class="text-indigo-700 flex justify-between bg-indigo-200 hover:bg-indigo-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+            type="button"> Primary Color <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+            </svg>
+        </button>
+        <button id="dropdownButtonSecondaryColor" data-dropdown-toggle="dropdownSecondaryColor" class="text-pink-700 flex justify-between bg-pink-200 hover:bg-pink-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+            type="button"> Secondary Color <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+            </svg>
+        </button>
+
+        <div id="dropdownResume" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownButtonResume">
+            </ul>
+        </div>
+        <div id="dropdownPrimaryColor" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownButtonPrimaryColor">
+            </ul>
+        </div>
+        <div id="dropdownSecondaryColor" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownButtonSecondaryColor">
+            </ul>
+        </div>
+
+    </div>
     <div id="resume"></div>
 </body>
 
