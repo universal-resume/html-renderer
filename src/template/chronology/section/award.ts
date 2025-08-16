@@ -1,12 +1,12 @@
-import type { Theme } from "@renderer";
 import type { Award } from "@universal-resume/ts-schema";
-import { DateHtmlElement, SubDateHtmlElement } from "../component/date";
-import { SectionLayout } from "../component/layout";
-import { LocationHtmlElement } from "../component/location";
-import { SummaryHtmlElement } from "../component/summary";
-import { TagsHtmlElement } from "../component/tags";
-import { TitleHtmlElement } from "../component/title";
-import { TypeHtmlElement } from "../component/type";
+import type { Theme } from "../../../renderer.js";
+import { DateHtmlElement, SubDateHtmlElement } from "../component/date.js";
+import { SectionLayout } from "../component/layout.js";
+import { LocationHtmlElement } from "../component/location.js";
+import { SummaryHtmlElement } from "../component/summary.js";
+import { TagsHtmlElement } from "../component/tags.js";
+import { TitleHtmlElement } from "../component/title.js";
+import { TypeHtmlElement } from "../component/type.js";
 
 export function AwardHtmlElement(
 	{ issuer, date, summary, location, tags, title }: Award.Type,

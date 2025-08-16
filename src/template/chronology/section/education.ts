@@ -1,11 +1,11 @@
-import type { Theme } from "@renderer";
 import type { Education } from "@universal-resume/ts-schema";
-import { DateHtmlElement, SubDateHtmlElement } from "../component/date";
-import { SectionLayout } from "../component/layout";
-import { LinkHtmlElement } from "../component/link";
-import { LocationHtmlElement } from "../component/location";
-import { TitleHtmlElement } from "../component/title";
-import { TypeHtmlElement } from "../component/type";
+import type { Theme } from "../../../renderer.js";
+import { DateHtmlElement, SubDateHtmlElement } from "../component/date.js";
+import { SectionLayout } from "../component/layout.js";
+import { LinkHtmlElement } from "../component/link.js";
+import { LocationHtmlElement } from "../component/location.js";
+import { TitleHtmlElement } from "../component/title.js";
+import { TypeHtmlElement } from "../component/type.js";
 
 export const Courses = (
 	courses: Education.Type["courses"] | undefined,
