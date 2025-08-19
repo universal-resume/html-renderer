@@ -1,4 +1,3 @@
-import type { Theme } from "@renderer";
 import type {
 	Award,
 	Certificate,
@@ -8,15 +7,16 @@ import type {
 	Publication,
 	Resume,
 } from "@universal-resume/ts-schema";
-import type { RendererActions } from "../template";
-import { AwardHtmlElement } from "./chronology/section/award";
-import { CertificateHtmlElement } from "./chronology/section/certificate";
-import { EducationHtmlElement } from "./chronology/section/education";
-import { EmploymentHtmlElement } from "./chronology/section/employment";
-import { HeaderHtmlElement } from "./chronology/section/header";
-import { InitiativeHtmlElement } from "./chronology/section/initiative";
-import { PublicationHtmlElement } from "./chronology/section/publication";
-import { ReferenceHtmlElement } from "./chronology/section/reference";
+import type { Theme } from "../renderer.js";
+import type { RendererActions } from "../template.js";
+import { AwardHtmlElement } from "./chronology/section/award.js";
+import { CertificateHtmlElement } from "./chronology/section/certificate.js";
+import { EducationHtmlElement } from "./chronology/section/education.js";
+import { EmploymentHtmlElement } from "./chronology/section/employment.js";
+import { HeaderHtmlElement } from "./chronology/section/header.js";
+import { InitiativeHtmlElement } from "./chronology/section/initiative.js";
+import { PublicationHtmlElement } from "./chronology/section/publication.js";
+import { ReferenceHtmlElement } from "./chronology/section/reference.js";
 
 type Chronology = Array<
 	| { __tag: "employment"; item: Employment.Type; date: Date }

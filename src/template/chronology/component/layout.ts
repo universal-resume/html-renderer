@@ -1,4 +1,4 @@
-import type { Theme } from "@renderer";
+import type { Theme } from "../../../renderer.js";
 
 export const SectionLayout = (
 	section: string,

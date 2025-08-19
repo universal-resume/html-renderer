@@ -1,4 +1,4 @@
-import type { Theme } from "@renderer";
+import type { Theme } from "../../../renderer.js";
 
 export const LinkHtmlElement = (
 	url: URL | undefined,

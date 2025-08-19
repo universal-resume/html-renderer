@@ -43,15 +43,19 @@ window.addEventListener("load", async () => {
 	}
 
 	const render = () => {
-			Renderer(json, {
-				template: template,
-				theme: {
-					color: {
-						primary: primaryColor,
+		const domElement = document.getElementById("resume");
+		if (!domElement) {
+			throw new Error("DOM element \"resume\" not found");
+		}
+		Renderer(json, {
+			template,
+			theme: {
+				color: {
+					primary: primaryColor,
 						secondary: secondaryColor,
 					},
 				},
-				domElement: "resume",
+				domElement,
 			}).catch((e) => {
 				console.error(e);
 			});

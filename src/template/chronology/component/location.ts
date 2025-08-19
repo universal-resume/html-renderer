@@ -1,5 +1,5 @@
-import type { Theme } from "@renderer";
 import type { Basics } from "@universal-resume/ts-schema";
+import type { Theme } from "../../../renderer.js";
 
 export const LocationHtmlElement = (
 	location: Basics.Type["location"] | undefined,

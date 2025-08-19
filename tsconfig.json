@@ -1,22 +1,29 @@
 {
     "compilerOptions": {
-        "target": "ES2020",
-        "module": "ESNext",
-        "moduleResolution": "Node",
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "declaration": true,
+        "declarationMap": false,
         "outDir": "dist",
         "rootDir": "src",
         "strict": true,
+        "sourceMap": false,
         "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
-        "paths": {
-            "@renderer": [
-                "./src/renderer"
-            ]
-        }
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmitOnError": true
     },
     "include": [
-        "src"
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "**/*.test.ts",
+        "**/*.spec.ts"
     ]
 }

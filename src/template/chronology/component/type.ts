@@ -1,4 +1,4 @@
-import { TagsHtmlElement } from "./tags";
+import { TagsHtmlElement } from "./tags.js";
 
 const mapping: Record<string, { label: string; icon: string }> = {
 	award: {
