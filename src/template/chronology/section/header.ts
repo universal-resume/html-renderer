@@ -34,7 +34,7 @@ export function HeaderHtmlElement(
 			.map((word) => word[0])
 			.join("");
 		return `
-            <div class="w-28 h-28 rounded-full border-4 border-${theme.color.secondary}-600 flex justify-center items-center bg-${theme.color.secondary}-500">
+            <div class="w-28 h-28 rounded-full border-4 border-${theme.color.secondary}-600 flex justify-center items-center bg-${theme.color.primary}-500">
                 <span class="text-5xl text-white tracking-widest">${initials}</span>
             </div>
         `;
@@ -64,7 +64,7 @@ export function HeaderHtmlElement(
                         ${
 													basics.picture
 														? `
-                            <img src="${basics.picture}" alt="${basics.name} profile picture" class="w-28 h-28 rounded-full border-4 border-${theme.color.secondary}-500">
+                            <img src="${basics.picture}" alt="${basics.name} profile picture" class="w-28 h-28 rounded-full border-4 border-${theme.color.secondary}-600">
                         `
 														: generateAvatarFromName(basics.name)
 												}
@@ -118,7 +118,7 @@ export function HeaderHtmlElement(
                         ${
 													basics.contact?.email || basics.contact?.phone
 														? `
-                            <div class="flex items-center justify-center text-white flex-col gap-2 p-4 font-bold bg-${theme.color.secondary}-500 mt-4">
+                            <div class="flex items-center justify-center text-white text-center break-all flex-col gap-2 p-4 font-bold bg-${theme.color.secondary}-600 mt-4">
                                 ${
 																	basics.contact?.email
 																		? `
@@ -153,7 +153,7 @@ export function HeaderHtmlElement(
                         <p class="text-lg mt-1">${basics.headline}</p>
                         ${basics.website ? `<p class="text-sm mt-1"><a href="${basics.website}" class="text-${theme.color.primary}-600">${basics.website}</a></p>` : ""}
                     </div>
-                    <p class="text-xs font-semibold p-4 mx-4 italic border border-${theme.color.primary}-500 border-2 rounded-xl text-justify">${basics.summary}</p>
+                    ${basics.summary ? `<p class="text-xs font-semibold p-4 mx-4 italic border border-${theme.color.primary}-500 border-2 rounded-xl text-justify">${basics.summary}</p>` : ""}
                     ${
 											skills?.length > 0
 												? `

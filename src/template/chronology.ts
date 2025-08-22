@@ -107,7 +107,7 @@ const createPage = (theme: Theme, actions: RendererActions): CurrentPage => {
 			"chronology-sidebar",
 			"w-1/4",
 			"h-full",
-			`bg-${theme.color.primary}-500`,
+			`bg-${theme.color.primary}-900`,
 		);
 		background.appendChild(sidebar);
 		return background;

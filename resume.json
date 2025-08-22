@@ -9,11 +9,11 @@
             "region": "Midwest"
         },
         "contact": {
-            "email": "bill.palmer@example.com",
+            "email": "bill.palmer.longemail@example.com",
             "phone": "+15551234567",
             "linkedin": "https://www.linkedin.com/in/bill-palmer"
         },
-        "summary": "IT operations leader charged with stabilizing business-critical systems and rescuing the Phoenix ERP program. Pragmatic, business-first problem solver who builds trust, flow, and collaboration across Development, Operations, and Security.",
+        "summary_": "IT operations leader charged with stabilizing business-critical systems and rescuing the Phoenix ERP program. Pragmatic, business-first problem solver who builds trust, flow, and collaboration across Development, Operations, and Security.",
         "profiles": [{
                 "network": "LinkedIn",
                 "url": "https://www.linkedin.com/in/bill-palmer",
