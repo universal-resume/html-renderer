@@ -14,36 +14,49 @@ window.addEventListener("load", async () => {
 
 	const resumeChanged = async (location: string) => {
 		json = await fetch(location)
-			.then((res) => res.json())
-		render();
+			.then((res) => res.json());
+
+		await render();
 	}
 
-	const primaryColorChanged = (color: string) => {
+	const primaryColorChanged = async (color: string) => {
 		const button = document.getElementById("dropdownButtonPrimaryColor");
+
 		if (button) {
 			button.classList.remove(`text-${primaryColor}-700`, `bg-${primaryColor}-200`, `hover:bg-${primaryColor}-300`);
 			button.classList.add(`text-${color}-700`, `bg-${color}-200`, `hover:bg-${color}-300`);
 		}
+
 		primaryColor = color;
-		render();
+
+		await render();
 	}
 
-	const secondaryColorChanged = (color: string) => {
+	const secondaryColorChanged = async (color: string) => {
 		const button = document.getElementById("dropdownButtonSecondaryColor");
+
 		if (button) {
 			button.classList.remove(`text-${secondaryColor}-700`, `bg-${secondaryColor}-200`, `hover:bg-${secondaryColor}-300`);
 			button.classList.add(`text-${color}-700`, `bg-${color}-200`, `hover:bg-${color}-300`);
 		}
+
 		secondaryColor = color;
-		render();
+
+		await render();
 	}
 
-	const render = () => {
+	const render = async () => {
 		const domElement = document.getElementById("resume");
+
 		if (!domElement) {
-			throw new Error("DOM element \"resume\" not found");
+			throw new Error("DOM element with ID \"resume\" not found")
 		}
-		Renderer(json, {
+
+		if (domElement.innerHTML) {
+			domElement.innerHTML = "";
+		}
+
+		await Renderer(json, {
 			template,
 			theme: {
 				color: {
@@ -52,57 +65,61 @@ window.addEventListener("load", async () => {
 				},
 			},
 			domElement,
-		}).catch((e) => {
-			console.error(e);
 		});
 	}
 
-	render();
+	await render();
 
 	const dropdownResume = document.getElementById("dropdownResume");
 	const resumeList = dropdownResume?.querySelector("ul");
+
 	if (resumeList) {
 		for (const resume of resumes) {
 			const li = document.createElement("li");
+
 			li.classList.add("cursor-pointer", "block", "px-4", "py-1", "hover:font-bold", "flex", "items-center", "gap-2");
 			li.innerHTML = `${resume.name}`;
-			li.addEventListener("click", () => {
+			li.addEventListener("click", async () => {
 				const resumeName = document.getElementById("resumeName");
+
 				if (resumeName) {
 					resumeName.innerHTML = resume.name;
 				}
-				resumeChanged(resume.location);
+
+				await resumeChanged(resume.location);
 			});
+
 			resumeList.appendChild(li);
 		}
 	}
 
 	const dropdownPrimaryColor = document.getElementById("dropdownPrimaryColor");
 	const primaryColorList = dropdownPrimaryColor?.querySelector("ul");
+
 	if (primaryColorList) {
 		for (const color of COLORS) {
 			const li = document.createElement("li");
+
 			li.classList.add("cursor-pointer", "block", "px-4", "py-1", "hover:font-bold", "flex", "items-center", "gap-2");
 			li.innerHTML = `<div class="w-4 h-4 rounded-md bg-${color}-500"></div> ${color}`;
-			li.addEventListener("click", () => {
-				primaryColorChanged(color)
-			});
+			li.addEventListener("click", () => primaryColorChanged(color));
+
 			primaryColorList.appendChild(li);
 		}
 	}
 
 	const dropdownSecondaryColor = document.getElementById("dropdownSecondaryColor");
 	const secondaryColorList = dropdownSecondaryColor?.querySelector("ul");
+
 	if (secondaryColorList) {
 		for (const color of COLORS) {
 			const li = document.createElement("li");
+
 			li.classList.add("cursor-pointer", "block", "px-4", "py-1", "hover:font-bold", "flex", "items-center", "gap-2");
 			li.innerHTML = `<div class="w-4 h-4 rounded-md bg-${color}-500"></div> ${color}`;
-			li.addEventListener("click", () => {
-				secondaryColorChanged(color)
-			});
+			li.addEventListener("click", () => secondaryColorChanged(color));
+
 			secondaryColorList.appendChild(li);
 		}
 	}
-
 });
