@@ -1,7 +1,4 @@
 import { Resume } from "@universal-resume/ts-schema";
-import { Effect, Schema } from "effect";
-import { isFailure, isSuccess } from "effect/Exit";
-import { formater } from "./renderer/formater.js";
 import type { TemplateId } from "./template.js";
 import { Template } from "./template.js";
 
@@ -23,23 +20,17 @@ export const DEFAULT_THEME: Theme = {
 };
 
 export async function Renderer(json: object, config: Config) {
-	const decode = Schema.decodeUnknown(Resume.Schema)({
-		...json,
-		meta: {},
-	}).pipe(Effect.mapError(formater));
+	const resume = Resume.decodeSync(
+		{
+			...json,
+			meta: {},
+		},
+		{ errors: "all", exact: true },
+	);
 
-	const resume = await Effect.runPromiseExit(decode);
-
-	if (isFailure(resume) && resume.cause._tag === "Fail") {
-		throw new Error(`Malformed resume: ${resume.cause.error}`);
-	}
-
-	if (isSuccess(resume)) {
-		config.domElement.innerHTML = "";
-		await Template(config?.template).render(
-			resume.value,
-			config.domElement,
-			config?.theme || DEFAULT_THEME,
-		);
-	}
+	await Template(config?.template).render(
+		resume,
+		config.domElement,
+		config?.theme ?? DEFAULT_THEME,
+	);
 }
