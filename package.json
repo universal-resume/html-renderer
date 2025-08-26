@@ -1,6 +1,6 @@
 {
     "name": "@universal-resume/html-renderer",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "description": "A TypeScript library for rendering resumes to HTML with customizable themes and templates",
     "type": "module",
     "exports": {
@@ -33,7 +33,8 @@
         "vite-plugin-dts": "^4.5.4"
     },
     "dependencies": {
-        "@universal-resume/ts-schema": "2.0.0",
+        "@universal-resume/json-examples": "2.0.1",
+        "@universal-resume/ts-schema": "2.1.0",
         "effect": "^3.17.2"
     },
     "engines": {

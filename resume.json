@@ -1,328 +1,266 @@
 {
+    "awards": [{
+        "title": "Potential EUDI Consortium Hackathon Winner",
+        "issuer": {
+            "name": "Vodafone"
+        },
+        "date": "2024-08-01T00:00:00.000Z",
+        "summary": "48h hackathon to interop our team between Issuer (my role), Identity Wallet and Verifier in order to make working a complete SSI flow, including revocation. #SSI #EUDIW #Openid4vc",
+        "tags": [
+            "🥇 1st Place",
+            "⚔️ Hackathon",
+            "EUDIW",
+            "Openid4vc",
+            "SSI"
+        ]
+    }],
     "basics": {
-        "headline": "Vice President of IT Operations",
-        "name": "Bill Palmer",
         "availability": "ASAP",
-        "location": {
-            "city": "Elkhart Grove",
-            "countryCode": "US",
-            "region": "Midwest"
-        },
         "contact": {
-            "email": "bill.palmer.longemail@example.com",
-            "phone": "+15551234567",
-            "linkedin": "https://www.linkedin.com/in/bill-palmer"
+            "email": "alexis@besson.tech",
+            "phone": "+33 6 01 02 03 04"
         },
-        "summary_": "IT operations leader charged with stabilizing business-critical systems and rescuing the Phoenix ERP program. Pragmatic, business-first problem solver who builds trust, flow, and collaboration across Development, Operations, and Security.",
+        "headline": "Senior Software Engineer",
+        "picture": "https://media.licdn.com/dms/image/v2/D4E03AQHu3mveAvgBKQ/profile-displayphoto-crop_800_800/B4EZgNON4eGYAU-/0/1752568487991?e=1758153600&v=beta&t=cgElhcWQI5BP6eUVXrCtHWZdQpM_4d5oCnOHNaZ0dYE",
+        "location": {
+            "city": "Lyon, France",
+            "countryCode": "FR",
+            "region": "Rhône"
+        },
+        "name": "Alexis Besson",
         "profiles": [{
                 "network": "LinkedIn",
-                "url": "https://www.linkedin.com/in/bill-palmer",
-                "username": "bill-palmer"
+                "url": "https://www.linkedin.com/in/alexis-besson-0a02bb107/",
+                "username": "Alexis Besson"
             },
             {
                 "network": "Github",
-                "url": "https://github.com/bill-palmer",
-                "username": "bill-palmer"
+                "url": "https://github.com/Lab3ss",
+                "username": "Lab3ss"
             }
         ],
-        "remote": false
+        "summary": "I bring over 10 years of varied experience where I’ve learned to connect technical teams and business needs. I enjoy tackling complex problems, shaping clear product visions, and helping digital teams move forward with purpose."
     },
+    "education": [{
+        "area": "Network And Telecommunications",
+        "endDate": "2017-09-01T00:00:00.000Z",
+        "organization": {
+            "name": "ENSEEIHT (INP-Toulouse)"
+        },
+        "startDate": "2014-09-01T00:00:00.000Z",
+        "type": "Engineering",
+        "url": "https://www.enseeiht.fr/"
+    }],
+    "languages": [{
+            "fluency": "bilingual",
+            "name": "French",
+            "countryCode": "FR"
+        },
+        {
+            "fluency": "full-professional",
+            "name": "English",
+            "countryCode": "GB"
+        }
+    ],
+    "initiatives": [{
+        "summary": "Standardizing resumes via JSON. One source of truth, easy to share, maintain, and generate with open-source tools.",
+        "name": "Universal Resume",
+        "position": "Owner & Main Contributor",
+        "startDate": "2025-07-01T00:00:00.000Z",
+        "tags": [
+            "Typescript",
+            "Open Source",
+            "Github"
+        ],
+        "type": "open-source",
+        "url": "https://github.com/universal-resume"
+    }],
+    "skills": [{
+            "name": "Product & Project Management",
+            "tags": [
+                "🚀 Product-Minded",
+                "Leadership",
+                "Agile"
+            ]
+        },
+        {
+            "name": "Software Development",
+            "tags": [
+                "AI-Enhanced",
+                "Hands-on",
+                "Automation Workflows",
+                "Typescript",
+                "🦀 Rust"
+            ]
+        }
+    ],
     "employments": [{
             "type": "internal",
-            "organization": {
-                "name": "Parts Unlimited",
-                "location": {
-                    "city": "Parts Unlimited Headquarters",
-                    "countryCode": "US"
-                },
-                "description": "A national retail and e-commerce company undergoing major IT modernization."
-            },
-            "position": "Vice President of IT Operations",
-            "startDate": "2021-01",
-            "summary": "Promoted to lead IT Operations with a mandate to restore service reliability, align IT delivery to business outcomes, and turn around the Phoenix Project.",
+            "summary": "Self-Sovereign Identity (SSI) aims to address numerous societal problems, and the underlying technologies are fascinating. I joined Archipels as a senior software engineer to implement a web identity & organization wallet, designed for individuals but especially for businesses.",
+            "endDate": "2024-07-01T00:00:00.000Z",
             "highlights": [
-                "Restored stability of revenue-impacting systems within first 90 days",
-                "Established cross-functional change advisory process to reduce failed changes",
-                "Reduced mean time to recovery (MTTR) by introducing blameless postmortems",
-                "Partnered with Development and Security to implement a CI/CD pipeline for core services"
+                "Head of delivery",
+                "Ownership of the interoperability with other actors in the SSI ecosystem",
+                "Architect and developer for many core features of the wallet"
             ],
-            "references": [{
-                "date": "2022-06",
-                "name": "Steve Masters",
-                "position": "Chief Executive Officer",
-                "contact": {
-                    "email": "steve.masters@example.com",
-                    "linkedin": "https://www.linkedin.com/in/steve-masters"
-                },
-                "testimonial": "Bill brought calm leadership and business alignment to our most critical technology initiatives. The turnaround of Phoenix was pivotal."
-            }],
+            "organization": {
+                "name": "Archipels"
+            },
+            "position": "Fullstack Software Engineer",
+            "startDate": "2023-10-01T00:00:00.000Z",
             "tags": [
-                "Leadership",
-                "DevOps",
-                "Incident Management",
-                "Change Management",
-                "Service Reliability"
+                "Typescript",
+                "NodeJS",
+                "Node-RED",
+                "React",
+                "Postgresql",
+                "Kafka",
+                "Effect-TS"
             ],
-            "url": "https://www.partsunlimited.example.com"
+            "url": "https://archipels.io/",
+            "references": [{
+                "date": "2025-07",
+                "name": "Quentin Drouot",
+                "position": "CTO",
+                "testimonial": "Thanks Alexis Besson for the energy and quality you brought to the team ! I'm looking forward to our next collaboration."
+            }]
+        },
+        {
+            "type": "freelance",
+            "summary": "FDJ (Francaise des Jeux) group entrusted Polyconseil with the design and development of its Nirio application, the new payment service of the group. I mainly worked on the authentication, the user onboarding workflow, the synchronization of the points of sales with the FDJ group's IS, and the end-to-end tests with the mobile application.",
+            "endDate": "2023-06-01T00:00:00.000Z",
+            "organization": {
+                "name": "Polycea"
+            },
+            "position": "Backend Software Engineer",
+            "startDate": "2022-07-01T00:00:00.000Z",
+            "tags": [
+                "NestJS",
+                "Typescript",
+                "GraphQL",
+                "Prisma",
+                "GCP"
+            ],
+            "url": "https://polycea.fr/",
+            "references": [{
+                "date": "2023-07",
+                "name": "Alexandre Hanot",
+                "position": "Senior Software Engineer",
+                "testimonial": "I strongly recommend Alexis. His open-minded approach, collaborative spirit, and professionalism make him an outstanding teammate and a great person to work with."
+            }]
+        },
+        {
+            "type": "freelance",
+            "summary": "Within the digital team of the Boiron group, I participated in the maintenance and evolution of a professional portal made available to health professionals in order to provide information on the products of the group.",
+            "endDate": "2022-06-01T00:00:00.000Z",
+            "organization": {
+                "name": "Boiron Laboratories"
+            },
+            "position": "Frontend Software Engineer",
+            "startDate": "2022-01-01T00:00:00.000Z",
+            "tags": [
+                "NextJS",
+                "Redux",
+                "Typescript",
+                "GraphQL",
+                "Drupal",
+                "Prismic"
+            ],
+            "url": "https://www.boiron.fr/"
+        },
+        {
+            "type": "freelance",
+            "summary": "Responsibility of a project from design to production. Orchestration between 4 teams from 3 continents. This project has a very pronounced business aspecs (thermodynamics) and therefore brings together many international players in a 100% English speaking environment.",
+            "endDate": "2021-12-01T00:00:00.000Z",
+            "organization": {
+                "name": "Carrier"
+            },
+            "position": "Lead Software Engineer",
+            "startDate": "2021-01-01T00:00:00.000Z",
+            "tags": [
+                "Coordination",
+                "Management",
+                "React",
+                "Redux",
+                "NodeJS",
+                "C#",
+                "Azure",
+                "Jenkins"
+            ],
+            "url": "https://www.carrier.com/"
+        },
+        {
+            "type": "freelance",
+            "summary": "I joined the “HomeServe – OnDemand” product development team in an agile environment, participated in the stabilization of a particularly complex architecture implementing several micro-services.",
+            "endDate": "2020-12-01T00:00:00.000Z",
+            "organization": {
+                "name": "HomeServe"
+            },
+            "position": "Fullstack Software Engineer",
+            "startDate": "2020-04-01T00:00:00.000Z",
+            "tags": [
+                "VueJS",
+                "Typescript",
+                "Hapi",
+                "ReactNative",
+                "PostgreSQL",
+                "GCP"
+            ],
+            "url": "https://www.homeserve.fr/"
+        },
+        {
+            "type": "freelance",
+            "summary": "Developed from scratch a solution for a vehicle test sessions management tool from a prototype to a final application. English speaking environment.",
+            "endDate": "2020-03-01T00:00:00.000Z",
+            "organization": {
+                "name": "Umlaut"
+            },
+            "position": "Lead Software Engineer",
+            "startDate": "2019-03-01T00:00:00.000Z",
+            "tags": [
+                "Angular",
+                "Firebase",
+                "Typescript",
+                "NodeJS",
+                "GraphQL",
+                "KnexJS",
+                "Postgresql"
+            ],
+            "url": "https://www.linkedin.com/company/umlaut-company"
         },
         {
             "type": "internal",
+            "summary": "Within a rigorous agile environment, I integrated for 18 months the development team of the B2B vertical of Allocine where I found a strong technical ecosystem. One of the most interesting challenge was the quantity of data to process and the need to optimize the performances of queries.",
+            "endDate": "2019-03-01T00:00:00.000Z",
             "organization": {
-                "name": "Parts Unlimited",
-                "location": {
-                    "city": "Parts Unlimited Headquarters",
-                    "countryCode": "US"
-                },
-                "description": "A national retail and e-commerce company."
+                "name": "Webedia (Allocine)"
             },
-            "position": "Director of Midrange Technology Operations",
-            "startDate": "2018-03",
-            "endDate": "2020-12",
-            "summary": "Led the team responsible for order processing, inventory, and fulfillment platforms on midrange systems.",
-            "highlights": [
-                "Achieved 99.9% availability for order management systems",
-                "Introduced capacity planning that prevented peak-season outages",
-                "Implemented proactive monitoring with clear SLOs and escalation paths"
-            ],
+            "position": "Backend Software Engineer",
+            "startDate": "2017-10-01T00:00:00.000Z",
             "tags": [
-                "Operations",
-                "Infrastructure",
-                "Monitoring",
-                "SRE Practices"
-            ]
+                "GraphQL",
+                "Typescript",
+                "NodeJS",
+                "React",
+                "Postgresql"
+            ],
+            "url": "https://www.allocine.fr/"
         },
         {
-            "type": "internal",
+            "type": "apprenticeship",
+            "summary": "Internship (half school / half company). Within a team of 10 people, I participated in the development of the visualization interface of a satellite control center (ISIS project), with the permanent problem of performances optimization.",
+            "endDate": "2017-09-01T00:00:00.000Z",
             "organization": {
-                "name": "Parts Unlimited",
-                "location": {
-                    "city": "Elkhart Grove",
-                    "countryCode": "US"
-                },
-                "description": "A large retail corporation specializing in automotive parts and accessories."
+                "name": "Atos"
             },
-            "position": "IT Operations Manager",
-            "startDate": "2014-05",
-            "endDate": "2018-02",
-            "summary": "Managed day-to-day IT operations for core business systems, supervising a cross-functional team of administrators and support engineers.",
-            "highlights": [
-                "Implemented a proactive incident management process reducing average downtime by 35%",
-                "Introduced standardized documentation for critical systems and processes",
-                "Coordinated with Development teams to schedule and execute non-disruptive maintenance windows"
-            ],
+            "position": "Frontend Software Engineer",
+            "startDate": "2016-07-01T00:00:00.000Z",
             "tags": [
-                "Operations Management",
-                "Incident Response",
-                "Process Improvement"
-            ]
+                "React",
+                "Redux",
+                "Electron"
+            ],
+            "url": "https://atos.net/fr/"
         }
-    ],
-    "skills": [{
-            "name": "Leadership",
-            "level": "expert",
-            "yearsOfExperience": 15,
-            "tags": [
-                "Team Building",
-                "Stakeholder Management"
-            ]
-        },
-        {
-            "name": "IT Service Management",
-            "level": "advanced",
-            "yearsOfExperience": 10,
-            "tags": [
-                "Incident Management",
-                "Problem Management",
-                "Change Control"
-            ]
-        },
-        {
-            "name": "DevOps",
-            "level": "advanced",
-            "yearsOfExperience": 6,
-            "tags": [
-                "CI/CD",
-                "Agile",
-                "Value Stream Mapping"
-            ]
-        },
-        {
-            "name": "Site Reliability Engineering",
-            "level": "advanced",
-            "yearsOfExperience": 4,
-            "tags": [
-                "SLI/SLO",
-                "Error Budgets",
-                "Postmortems"
-            ]
-        }
-    ],
-    "education": [{
-        "area": "Information Systems",
-        "organization": {
-            "name": "State University",
-            "location": {
-                "city": "Springfield",
-                "countryCode": "US"
-            }
-        },
-        "startDate": "1999",
-        "endDate": "2003",
-        "type": "Bachelor of Science",
-        "url": "https://www.stateuniversity.example.edu",
-        "courses": [{
-                "name": "Systems Analysis and Design",
-                "summary": "Covered the full system development lifecycle, from requirements gathering to deployment."
-            },
-            {
-                "name": "IT Project Management",
-                "summary": "Focus on planning, executing, and monitoring large-scale technology projects."
-            },
-            {
-                "name": "Network Infrastructure",
-                "summary": "Hands-on labs in configuring, securing, and troubleshooting enterprise networks."
-            },
-            {
-                "name": "Operations Management",
-                "summary": "Explored process optimization, capacity planning, and service delivery."
-            }
-        ]
-    }],
-    "initiatives": [{
-            "summary": "Cross-functional transformation program to increase deployment frequency, improve stability, and accelerate feedback loops across Development, Operations, and Security.",
-            "endDate": "2022-12",
-            "organization": {
-                "name": "Parts Unlimited",
-                "location": {
-                    "city": "Parts Unlimited Headquarters",
-                    "countryCode": "US"
-                }
-            },
-            "highlights": [
-                "Increased deployment frequency from monthly to weekly for core services",
-                "Cut change failure rate by 40% through peer reviews and automated testing",
-                "Introduced value stream mapping workshops to identify and remove bottlenecks"
-            ],
-            "location": {
-                "city": "Parts Unlimited Headquarters",
-                "countryCode": "US"
-            },
-            "name": "Phoenix Project DevOps Transformation",
-            "position": "Program Lead",
-            "references": [{
-                "date": "2022-11",
-                "name": "Erik Reid",
-                "position": "Advisor",
-                "testimonial": "Bill embraced the Three Ways—flow, feedback, and continual learning—and institutionalized them.",
-                "contact": {
-                    "email": "erik.reid@example.com"
-                }
-            }],
-            "startDate": "2021-02",
-            "status": "Completed",
-            "tags": [
-                "Transformation",
-                "DevOps",
-                "Culture"
-            ],
-            "type": "open-source",
-            "url": "https://intranet.partsunlimited.example.com/phoenix"
-        },
-        {
-            "summary": "Co-founded a small IT consultancy offering infrastructure setup, cloud migration, and managed services for local businesses.",
-            "endDate": "2014-04",
-            "organization": {
-                "name": "TechBridge Solutions",
-                "location": {
-                    "city": "Springfield",
-                    "countryCode": "US"
-                },
-                "description": "IT services startup focused on helping SMBs modernize their technology stack."
-            },
-            "highlights": [
-                "Delivered infrastructure modernization projects for over 15 small-to-medium businesses",
-                "Designed a cloud migration framework that reduced client onboarding time by 30%",
-                "Built recurring revenue streams through managed IT service contracts"
-            ],
-            "location": {
-                "city": "Springfield",
-                "countryCode": "US"
-            },
-            "name": "TechBridge Solutions",
-            "position": "Co-Founder & Operations Lead",
-            "startDate": "2011-01",
-            "status": "Acquired",
-            "tags": [
-                "Startup",
-                "Cloud",
-                "Infrastructure",
-                "Operations"
-            ],
-            "type": "startup",
-            "url": "https://www.techbridgesolutions.example.com"
-        }
-    ],
-    "certificates": [{
-        "date": "2020-05",
-        "issuer": {
-            "name": "AXELOS",
-            "location": {
-                "city": "London",
-                "countryCode": "GB"
-            },
-            "description": "Global best practice owner for ITIL."
-        },
-        "name": "ITIL Foundation Certificate in IT Service Management",
-        "summary": "Validated knowledge of ITIL concepts for incident, problem, and change management.",
-        "url": "https://www.axelos.com/certifications/itil-foundation",
-        "tags": [
-            "ITIL",
-            "Service Management"
-        ]
-    }],
-    "publications": [{
-        "authors": [
-            "Bill Palmer"
-        ],
-        "doi": "PU-DX-2022-001",
-        "name": "From Firefighting to Flow: Lessons from the Phoenix Project",
-        "publisher": {
-            "name": "Parts Unlimited",
-            "location": {
-                "city": "Parts Unlimited Headquarters",
-                "countryCode": "US"
-            },
-            "description": "Internal and partner-facing publications."
-        },
-        "date": "2022-10",
-        "summary": "A practical account of stabilizing critical systems and implementing DevOps practices to improve throughput and reliability.",
-        "tags": [
-            "DevOps",
-            "SRE",
-            "ITSM"
-        ],
-        "type": "presentation",
-        "url": "https://www.partsunlimited.example.com/resources/firefighting-to-flow"
-    }],
-    "interests": [{
-            "name": "Lean Management",
-            "summary": "Applying Lean principles and the Three Ways to tech operations."
-        },
-        {
-            "name": "Motorcycling",
-            "tags": [
-                "Travel",
-                "Adventure"
-            ]
-        }
-    ],
-    "languages": [{
-        "name": "English",
-        "fluency": "fluent",
-        "countryCode": "US"
-    }],
-    "meta": {
-        "lastModified": "2025-08-14",
-        "schema": "universal-resume-v2.0.0"
-    }
+    ]
 }

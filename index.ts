@@ -1,25 +1,21 @@
+import { examples } from "@universal-resume/json-examples";
 import { Renderer } from "./src/renderer";
 import { TemplateId } from "./src/template";
 
-const RESUMES = ["bill-palmer", "dwight-schrute", "harry-potter"];
 const COLORS = ["red", "orange", "amber", "yellow", "lime", "green", "emerald", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "fuchsia", "pink", "rose", "slate", "gray", "zinc", "stone"];
 
-window.addEventListener("load", async () => {
-	const custom = await fetch("./resume.json");
-	const customJson = await custom.json();
+const resumes = [{ name: "Custom", location: "./resume.json" }, ...examples];
 
-	let json = customJson;
+window.addEventListener("load", async () => {
+	let json = await fetch("./resume.json").then((res) => res.json());
 	let template: TemplateId = "chronology" as const;
 	let primaryColor = "indigo";
 	let secondaryColor = "rose";
 
-	const resumeChanged = async (resume: string) => {
-			json = customJson;
-			if (resume !== "custom") {
-				json = await fetch(`https://unpkg.com/@universal-resume/json-examples@0.1.1/examples/${resume}.json`)
-					.then((res) => res.json())
-			}
-			render();
+	const resumeChanged = async (location: string) => {
+		json = await fetch(location)
+			.then((res) => res.json())
+		render();
 	}
 
 	const primaryColorChanged = (color: string) => {
@@ -52,13 +48,13 @@ window.addEventListener("load", async () => {
 			theme: {
 				color: {
 					primary: primaryColor,
-						secondary: secondaryColor,
-					},
+					secondary: secondaryColor,
 				},
-				domElement,
-			}).catch((e) => {
-				console.error(e);
-			});
+			},
+			domElement,
+		}).catch((e) => {
+			console.error(e);
+		});
 	}
 
 	render();
@@ -66,12 +62,16 @@ window.addEventListener("load", async () => {
 	const dropdownResume = document.getElementById("dropdownResume");
 	const resumeList = dropdownResume?.querySelector("ul");
 	if (resumeList) {
-		for (const resume of RESUMES) {
+		for (const resume of resumes) {
 			const li = document.createElement("li");
 			li.classList.add("cursor-pointer", "block", "px-4", "py-1", "hover:font-bold", "flex", "items-center", "gap-2");
-			li.innerHTML = `${resume}`;
+			li.innerHTML = `${resume.name}`;
 			li.addEventListener("click", () => {
-				resumeChanged(resume);
+				const resumeName = document.getElementById("resumeName");
+				if (resumeName) {
+					resumeName.innerHTML = resume.name;
+				}
+				resumeChanged(resume.location);
 			});
 			resumeList.appendChild(li);
 		}

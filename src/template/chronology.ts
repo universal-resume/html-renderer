@@ -181,6 +181,9 @@ const addSection = async (
 		if (border) {
 			border.classList.remove("border-t");
 		}
+		if (html.id.includes("reference")) {
+			(html.childNodes[1].childNodes[0] as HTMLElement).classList.add("py-4");
+		}
 		const { height } = await tryAppend(current, html);
 		current.height = height;
 		return current;
