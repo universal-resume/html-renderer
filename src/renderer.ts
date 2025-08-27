@@ -9,10 +9,26 @@ export type Theme = {
 	};
 };
 
+export const LANGUAGES = {
+	en: {
+		label: "English",
+		code: "en",
+	},
+	fr: {
+		label: "Français",
+		code: "fr",
+	},
+} as const;
+
+export type Lang = keyof typeof LANGUAGES;
+
+export const DEFAULT_LANG: Lang = "en";
+
 export type Config = {
 	domElement: HTMLElement;
 	theme?: Theme;
 	template?: TemplateId;
+	lang?: Lang;
 };
 
 export const DEFAULT_THEME: Theme = {
@@ -32,5 +48,6 @@ export async function Renderer(json: object, config: Config) {
 		resume,
 		config.domElement,
 		config?.theme ?? DEFAULT_THEME,
+		config?.lang ?? DEFAULT_LANG,
 	);
 }

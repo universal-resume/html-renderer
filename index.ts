@@ -1,6 +1,6 @@
 import { examples } from "@universal-resume/json-examples";
-import { Renderer } from "./src/renderer";
-import { TemplateId } from "./src/template";
+import { DEFAULT_LANG, Lang, LANGUAGES, Renderer } from "./src/renderer.js";
+import { TemplateId } from "./src/template.js";
 import defaultJson from './resume.json'
 
 const COLORS = ["red", "orange", "amber", "yellow", "lime", "green", "emerald", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "fuchsia", "pink", "rose", "slate", "gray", "zinc", "stone"];
@@ -64,6 +64,8 @@ window.addEventListener("load", async () => {
 	let template: TemplateId = "chronology" as const;
 	let primaryColor = "indigo";
 	let secondaryColor = "rose";
+	let lang: Lang = DEFAULT_LANG;
+	(document.getElementById("langName") as HTMLButtonElement).textContent = LANGUAGES[DEFAULT_LANG].label;
 
 	const resumeChanged = async (location: string) => {
 		try {
@@ -73,6 +75,14 @@ window.addEventListener("load", async () => {
 		} catch (error) {
 			errorHandling(error, document.getElementById("resume") ?? undefined);
 		}
+	}
+
+	const langChanged = async (value: Lang) => {
+	(document.getElementById("langName") as HTMLButtonElement).textContent = LANGUAGES[value].label;
+
+		lang = value;
+
+		await render();
 	}
 	
 	const primaryColorChanged = async (color: string) => {
@@ -120,6 +130,7 @@ window.addEventListener("load", async () => {
 					},
 				},
 				domElement,
+				lang,
 			});
 		} catch (error) {
 			errorHandling(error, document.getElementById("resume") ?? undefined)
@@ -136,18 +147,35 @@ window.addEventListener("load", async () => {
 			const li = document.createElement("li");
 
 			li.classList.add("cursor-pointer", "block", "px-4", "py-1", "hover:font-bold", "flex", "items-center", "gap-2");
-			li.innerHTML = resume.name;
+			li.textContent = resume.name;
 			li.addEventListener("click", async () => {
 				const resumeName = document.getElementById("resumeName");
 
 				if (resumeName) {
-					resumeName.innerHTML = resume.name;
+					resumeName.textContent = resume.name;
 				}
 
 				await resumeChanged(resume.location);
 			});
 
 			resumeList.appendChild(li);
+		}
+	}
+
+	const dropdownLang = document.getElementById("dropdownLang");
+	const langList = dropdownLang?.querySelector("ul");
+
+	if (langList) {
+		for (const lang of Object.keys(LANGUAGES)) {
+			const li = document.createElement("li");
+
+			li.classList.add("cursor-pointer", "block", "px-4", "py-1", "hover:font-bold", "flex", "items-center", "gap-2");
+			li.textContent = LANGUAGES[lang].label;
+			li.addEventListener("click", async () => {
+				await langChanged(LANGUAGES[lang].code);
+			});
+
+			langList.appendChild(li);
 		}
 	}
 

@@ -1,5 +1,5 @@
 import type { Resume } from "@universal-resume/ts-schema";
-import type { Theme } from "./renderer.js";
+import type { Lang, Theme } from "./renderer.js";
 import { chronology } from "./template/chronology.js";
 
 export const TEMPLATES = {
@@ -90,8 +90,13 @@ export const Template = (id: TemplateId = DEFAULT_TEMPLATE) => {
 	const getPages = () => pages;
 
 	return {
-		render: (resume: Resume.Type, domElement: HTMLElement, theme: Theme) =>
-			renderer(resume, theme, {
+		render: (
+			resume: Resume.Type,
+			domElement: HTMLElement,
+			theme: Theme,
+			lang: Lang,
+		) =>
+			renderer(resume, theme, lang, {
 				addPage: addPage(domElement),
 				getPages,
 			}),

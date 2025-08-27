@@ -1,16 +1,24 @@
 import type { Employment } from "@universal-resume/ts-schema";
 
-import type { Theme } from "../../../renderer.js";
+import type { Lang, Theme } from "../../../renderer.js";
 import { DateHtmlElement, SubDateHtmlElement } from "../component/date.js";
 import { HighlightsHtmlElement } from "../component/highlights.js";
 import { SectionLayout } from "../component/layout.js";
 import { LinkHtmlElement } from "../component/link.js";
 import { LocationHtmlElement } from "../component/location.js";
-import { ReferenceHtmlElement } from "../component/reference.js";
 import { SummaryHtmlElement } from "../component/summary.js";
 import { TagsHtmlElement } from "../component/tags.js";
 import { TitleHtmlElement } from "../component/title.js";
 import { TypeHtmlElement } from "../component/type.js";
+
+const i18n = {
+	en: {
+		at: "at",
+	},
+	fr: {
+		at: "chez",
+	},
+} as const;
 
 export function EmploymentHtmlElement(
 	{
@@ -24,16 +32,16 @@ export function EmploymentHtmlElement(
 		url,
 		type,
 		tags,
-		references,
 	}: Employment.Type,
 	theme: Theme,
+	lang: Lang,
 	index: number,
 ) {
 	return {
 		build: () => {
 			const main = `
                 ${TitleHtmlElement({
-									title: `<span class="text-sm"><strong>${position}</strong> at <strong>${organization.name}</strong></span>`,
+									title: `<span class="text-sm"><strong>${position}</strong> ${i18n[lang].at} <strong>${organization.name}</strong></span>`,
 								})}
                 ${LocationHtmlElement(location, theme)}
                 ${LinkHtmlElement(url, theme)}
@@ -41,7 +49,7 @@ export function EmploymentHtmlElement(
                 ${HighlightsHtmlElement(highlights)}
                 ${TagsHtmlElement(tags, theme.color.primary)}
 	`;
-			const sidebar = `${DateHtmlElement({ startDate, endDate })} ${TypeHtmlElement({ type: "employment" }, theme.color.secondary)} ${TypeHtmlElement({ type }, theme.color.primary)} ${SubDateHtmlElement({ startDate, endDate })} `;
+			const sidebar = `${DateHtmlElement({ startDate, endDate }, lang)} ${TypeHtmlElement({ type: "employment" }, lang, theme.color.secondary)} ${TypeHtmlElement({ type }, lang, theme.color.primary)} ${SubDateHtmlElement({ startDate, endDate }, lang)} `;
 			return SectionLayout("work", index, theme, main, sidebar);
 		},
 	};
