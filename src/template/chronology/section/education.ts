@@ -1,5 +1,5 @@
 import type { Education } from "@universal-resume/ts-schema";
-import type { Theme } from "../../../renderer.js";
+import type { Lang, Theme } from "../../../renderer.js";
 import { DateHtmlElement, SubDateHtmlElement } from "../component/date.js";
 import { SectionLayout } from "../component/layout.js";
 import { LinkHtmlElement } from "../component/link.js";
@@ -14,6 +14,15 @@ export const Courses = (
 	return `<ul class="list-disc list-inside text-xs py-2">${courses.map((course) => `<li><strong>${course.name}</strong> ${course.summary ? `<br/> ${course.summary}` : ""}</li>`).join("")}</ul>`;
 };
 
+const i18n = {
+	en: {
+		in: "in",
+	},
+	fr: {
+		in: "en",
+	},
+} as const;
+
 export function EducationHtmlElement(
 	{
 		organization,
@@ -26,13 +35,14 @@ export function EducationHtmlElement(
 		location,
 	}: Education.Type,
 	theme: Theme,
+	lang: Lang,
 	index: number,
 ) {
 	return {
 		build: () => {
 			const main = `
 				${TitleHtmlElement({
-					title: `<span class="text-sm"><strong>${type}</strong> in <strong>${area}</strong></span>`,
+					title: `<span class="text-sm"><strong>${type}</strong> ${i18n[lang].in} <strong>${area}</strong></span>`,
 				})}
                 <div class="flex gap-1">
                     <span class="text-sm font-semibold">${organization.name}</span>
@@ -41,7 +51,7 @@ export function EducationHtmlElement(
                 ${LocationHtmlElement(location, theme)}
                 ${Courses(courses)}
             `;
-			const sidebar = `${DateHtmlElement({ startDate, endDate })} ${TypeHtmlElement({ type: "education" }, theme.color.secondary)} ${SubDateHtmlElement({ startDate, endDate })}`;
+			const sidebar = `${DateHtmlElement({ startDate, endDate }, lang)} ${TypeHtmlElement({ type: "education" }, lang, theme.color.secondary)} ${SubDateHtmlElement({ startDate, endDate }, lang)}`;
 			return SectionLayout("education", index, theme, main, sidebar);
 		},
 	};

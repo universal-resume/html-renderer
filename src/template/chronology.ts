@@ -7,7 +7,7 @@ import type {
 	Publication,
 	Resume,
 } from "@universal-resume/ts-schema";
-import type { Theme } from "../renderer.js";
+import type { Lang, Theme } from "../renderer.js";
 import type { RendererActions } from "../template.js";
 import { AwardHtmlElement } from "./chronology/section/award.js";
 import { CertificateHtmlElement } from "./chronology/section/certificate.js";
@@ -193,6 +193,7 @@ const addSection = async (
 export async function chronology(
 	resume: Resume.Type,
 	theme: Theme,
+	lang: Lang,
 	actions: RendererActions,
 ) {
 	let page = createPage(theme, actions);
@@ -203,6 +204,7 @@ export async function chronology(
 			skills: [...(resume.skills || [])],
 		},
 		theme,
+		lang,
 	).build({ id: "header" });
 	page = await addSection(page, header, theme, actions);
 
@@ -211,28 +213,50 @@ export async function chronology(
 		let htmlElement: HTMLElement;
 		switch (section.__tag) {
 			case "employment":
-				htmlElement = EmploymentHtmlElement(section.item, theme, index).build();
+				htmlElement = EmploymentHtmlElement(
+					section.item,
+					theme,
+					lang,
+					index,
+				).build();
 				break;
 			case "education":
-				htmlElement = EducationHtmlElement(section.item, theme, index).build();
+				htmlElement = EducationHtmlElement(
+					section.item,
+					theme,
+					lang,
+					index,
+				).build();
 				break;
 			case "award":
-				htmlElement = AwardHtmlElement(section.item, theme, index).build();
+				htmlElement = AwardHtmlElement(
+					section.item,
+					theme,
+					lang,
+					index,
+				).build();
 				break;
 			case "certificate":
 				htmlElement = CertificateHtmlElement(
 					section.item,
 					theme,
+					lang,
 					index,
 				).build();
 				break;
 			case "initiative":
-				htmlElement = InitiativeHtmlElement(section.item, theme, index).build();
+				htmlElement = InitiativeHtmlElement(
+					section.item,
+					theme,
+					lang,
+					index,
+				).build();
 				break;
 			case "publication":
 				htmlElement = PublicationHtmlElement(
 					section.item,
 					theme,
+					lang,
 					index,
 				).build();
 				break;
@@ -258,6 +282,7 @@ export async function chronology(
 								: {}),
 						},
 						theme,
+						lang,
 						index,
 					).build();
 					page = await addSection(page, referenceHtml, theme, actions);

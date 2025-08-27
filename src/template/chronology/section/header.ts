@@ -1,5 +1,5 @@
 import type { Basics, Language, Skill } from "@universal-resume/ts-schema";
-import type { Theme } from "../../../renderer.js";
+import type { Lang, Theme } from "../../../renderer.js";
 
 const logos = {
 	linkedin: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="16" width="16" fill="#FFF"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>`,
@@ -25,9 +25,19 @@ const flagsMapping: Record<string, string> = {
 	Dutch: "nl",
 };
 
+const i18n = {
+	en: {
+		available: "Available",
+	},
+	fr: {
+		available: "Disponible",
+	},
+} as const;
+
 export function HeaderHtmlElement(
 	{ basics, skills }: { basics: Basics.Type; skills: Skill.Type[] },
 	theme: Theme,
+	lang: Lang,
 ) {
 	const generateAvatarFromName = (name: string) => {
 		const initials = name
@@ -80,7 +90,7 @@ export function HeaderHtmlElement(
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z"/></svg>
                                 </td>
                                 <td>
-                                    <a target="_blank" href="https://www.google.com/search?q=${basics.location.city}" class="hover:underline">${basics.location.city}</a>
+                                    <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/search?q=${basics.location.city}" class="hover:underline">${basics.location.city}</a>
                                 </td>
                             </tr>
                         `
@@ -94,7 +104,7 @@ export function HeaderHtmlElement(
                                     ${logos[profile.network.toLowerCase() as keyof typeof logos] || ""}
                                 </td>
                                 <td>
-                                    <a href="${profile.url}" target="_blank" class="hover:underline">${profile.username || profile.url}</a>
+                                    <a href="${profile.url}" rel="noopener noreferrer" target="_blank" class="hover:underline">${profile.username || profile.url}</a>
                                 </td>
                             </tr>
                         `,
@@ -145,7 +155,7 @@ export function HeaderHtmlElement(
 							${
 								basics.availability
 									? `
-							<div class="m-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-1.5 py-0.5 bg-${theme.color.secondary}-200 text-${theme.color.secondary}-700 rounded-full">Available ${basics.availability}</div>
+							<div class="m-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-1.5 py-0.5 bg-${theme.color.secondary}-200 text-${theme.color.secondary}-700 rounded-full"> ${i18n[lang].available} ${basics.availability}</div>
 							`
 									: `<div></div>`
 							}
