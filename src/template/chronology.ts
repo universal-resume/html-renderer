@@ -250,8 +250,12 @@ export async function chronology(
 						{
 							name: reference.name,
 							testimonial: reference.testimonial,
-							...(reference.position !== undefined ? { position: reference.position } : {}),
-							...(section.item.organization !== undefined ? { organization: section.item.organization } : {}),
+							...(reference.position !== undefined
+								? { position: reference.position }
+								: {}),
+							...(section.item.organization !== undefined
+								? { organization: section.item.organization }
+								: {}),
 						},
 						theme,
 						index,
