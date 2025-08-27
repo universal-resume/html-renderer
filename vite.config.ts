@@ -2,6 +2,14 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
+  server: {
+    watch: {
+      ignored: ['**/node_modules/**']
+    }
+  },
+  optimizeDeps: {
+    force: true
+  },
   build: {
     lib: {
       entry: "src/index.ts",
