@@ -36,7 +36,7 @@ export function EducationHtmlElement(
 	}: Education.Type,
 	theme: Theme,
 	lang: Lang,
-	index: number,
+	path: string,
 ) {
 	return {
 		build: () => {
@@ -52,7 +52,7 @@ export function EducationHtmlElement(
                 ${Courses(courses)}
             `;
 			const sidebar = `${DateHtmlElement({ startDate, endDate }, lang)} ${TypeHtmlElement({ type: "education" }, lang, theme.color.secondary)} ${SubDateHtmlElement({ startDate, endDate }, lang)}`;
-			return SectionLayout("education", index, theme, main, sidebar);
+			return SectionLayout("education", path, theme, main, sidebar);
 		},
 	};
 }

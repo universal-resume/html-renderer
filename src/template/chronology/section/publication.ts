@@ -21,7 +21,7 @@ export function PublicationHtmlElement(
 	{ name, publisher, date, summary, url, tags }: Publication.Type,
 	theme: Theme,
 	lang: Lang,
-	index: number,
+	path: string,
 ) {
 	return {
 		build: () => {
@@ -35,7 +35,7 @@ export function PublicationHtmlElement(
                 ${TagsHtmlElement(tags, theme.color.primary)}
             `;
 			const sidebar = `${DateHtmlElement({ date }, lang)} ${TypeHtmlElement({ type: "publication" }, lang, theme.color.secondary)} ${SubDateHtmlElement({ date }, lang)}`;
-			return SectionLayout("publication", index, theme, main, sidebar);
+			return SectionLayout("publication", path, theme, main, sidebar);
 		},
 	};
 }

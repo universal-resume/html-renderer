@@ -25,12 +25,11 @@ export function ReferenceHtmlElement(
 	},
 	theme: Theme,
 	lang: Lang,
-	index: number,
+	path: string,
 ) {
 	return {
 		build: () => {
 			const container = document.createElement("div");
-			container.id = `reference-${index}`;
 			container.classList.add(
 				"flex",
 				"flex-col",
@@ -49,7 +48,7 @@ export function ReferenceHtmlElement(
 				lang,
 				theme.color.secondary,
 			);
-			return SectionLayout("reference", index, theme, content, sidebar);
+			return SectionLayout("reference", path, theme, content, sidebar);
 		},
 	};
 }

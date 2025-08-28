@@ -2,14 +2,15 @@ import type { Theme } from "../../../renderer.js";
 
 export const SectionLayout = (
 	section: string,
-	index: number,
+	path: string,
 	theme: Theme,
 	content: string,
 	sidebar?: string,
 ) => {
-	const container = document.createElement("div");
-	container.id = `${section}-${index}`;
+	const container = document.createElement("section");
 	container.classList.add("flex", "relative");
+	container.setAttribute("data-type", section);
+	container.setAttribute("data-path", path);
 
 	const sidebarContainer = document.createElement("div");
 	sidebarContainer.classList.add(

@@ -20,7 +20,7 @@ export function CertificateHtmlElement(
 	{ name, issuer, date, url, tags }: Certificate.Type,
 	theme: Theme,
 	lang: Lang,
-	index: number,
+	path: string,
 ) {
 	return {
 		build: () => {
@@ -34,7 +34,7 @@ export function CertificateHtmlElement(
             `;
 
 			const sidebar = `${DateHtmlElement({ date }, lang)} ${TypeHtmlElement({ type: "certificate" }, lang, theme.color.secondary)} ${SubDateHtmlElement({ date }, lang)}`;
-			return SectionLayout("certificate", index, theme, main, sidebar);
+			return SectionLayout("certificate", path, theme, main, sidebar);
 		},
 	};
 }
