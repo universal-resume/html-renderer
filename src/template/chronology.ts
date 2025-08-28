@@ -19,12 +19,12 @@ import { PublicationHtmlElement } from "./chronology/section/publication.js";
 import { ReferenceHtmlElement } from "./chronology/section/reference.js";
 
 type Chronology = Array<
-	| { __tag: "employment"; item: Employment.Type; date: Date }
-	| { __tag: "education"; item: Education.Type; date: Date }
-	| { __tag: "award"; item: Award.Type; date: Date }
-	| { __tag: "certificate"; item: Certificate.Type; date: Date }
-	| { __tag: "initiative"; item: Initiative.Type; date: Date }
-	| { __tag: "publication"; item: Publication.Type; date: Date }
+	| { __tag: "employment"; item: Employment.Type; date: Date; path: string }
+	| { __tag: "education"; item: Education.Type; date: Date; path: string }
+	| { __tag: "award"; item: Award.Type; date: Date; path: string }
+	| { __tag: "certificate"; item: Certificate.Type; date: Date; path: string }
+	| { __tag: "initiative"; item: Initiative.Type; date: Date; path: string }
+	| { __tag: "publication"; item: Publication.Type; date: Date; path: string }
 >;
 
 type CurrentPage = {
@@ -37,55 +37,61 @@ const fromResume = (resume: Resume.Type): Chronology => {
 	const chronology: Chronology = [];
 	if (resume.employments && resume.employments.length > 0) {
 		chronology.push(
-			...resume.employments.map((employment) => ({
+			...resume.employments.map((employment, index) => ({
 				__tag: "employment" as const,
 				item: employment,
 				date: employment.startDate,
+				path: `employments.${index}`,
 			})),
 		);
 	}
 	if (resume.education && resume.education.length > 0) {
 		chronology.push(
-			...resume.education.map((education) => ({
+			...resume.education.map((education, index) => ({
 				__tag: "education" as const,
 				item: education,
 				date: education.startDate,
+				path: `education.${index}`,
 			})),
 		);
 	}
 	if (resume.awards && resume.awards.length > 0) {
 		chronology.push(
-			...resume.awards.map((award) => ({
+			...resume.awards.map((award, index) => ({
 				__tag: "award" as const,
 				item: award,
 				date: award.date,
+				path: `awards.${index}`,
 			})),
 		);
 	}
 	if (resume.certificates && resume.certificates.length > 0) {
 		chronology.push(
-			...resume.certificates.map((certificate) => ({
+			...resume.certificates.map((certificate, index) => ({
 				__tag: "certificate" as const,
 				item: certificate,
 				date: certificate.date,
+				path: `certificates.${index}`,
 			})),
 		);
 	}
 	if (resume.initiatives && resume.initiatives.length > 0) {
 		chronology.push(
-			...resume.initiatives.map((initiative) => ({
+			...resume.initiatives.map((initiative, index) => ({
 				__tag: "initiative" as const,
 				item: initiative,
 				date: initiative.startDate,
+				path: `initiatives.${index}`,
 			})),
 		);
 	}
 	if (resume.publications && resume.publications.length > 0) {
 		chronology.push(
-			...resume.publications.map((publication) => ({
+			...resume.publications.map((publication, index) => ({
 				__tag: "publication" as const,
 				item: publication,
 				date: publication.date,
+				path: `publications.${index}`,
 			})),
 		);
 	}
@@ -181,7 +187,7 @@ const addSection = async (
 		if (border) {
 			border.classList.remove("border-t");
 		}
-		if (html.id.includes("reference")) {
+		if (html.getAttribute("data-type") === "reference") {
 			(html.childNodes[1].childNodes[0] as HTMLElement).classList.add("py-4");
 		}
 		const { height } = await tryAppend(current, html);
@@ -205,11 +211,11 @@ export async function chronology(
 		},
 		theme,
 		lang,
-	).build({ id: "header" });
+	).build();
 	page = await addSection(page, header, theme, actions);
 
 	const sections = fromResume(resume);
-	for (const [index, section] of sections.entries()) {
+	for (const section of sections) {
 		let htmlElement: HTMLElement;
 		switch (section.__tag) {
 			case "employment":
@@ -217,7 +223,7 @@ export async function chronology(
 					section.item,
 					theme,
 					lang,
-					index,
+					section.path,
 				).build();
 				break;
 			case "education":
@@ -225,7 +231,7 @@ export async function chronology(
 					section.item,
 					theme,
 					lang,
-					index,
+					section.path,
 				).build();
 				break;
 			case "award":
@@ -233,7 +239,7 @@ export async function chronology(
 					section.item,
 					theme,
 					lang,
-					index,
+					section.path,
 				).build();
 				break;
 			case "certificate":
@@ -241,7 +247,7 @@ export async function chronology(
 					section.item,
 					theme,
 					lang,
-					index,
+					section.path,
 				).build();
 				break;
 			case "initiative":
@@ -249,7 +255,7 @@ export async function chronology(
 					section.item,
 					theme,
 					lang,
-					index,
+					section.path,
 				).build();
 				break;
 			case "publication":
@@ -257,7 +263,7 @@ export async function chronology(
 					section.item,
 					theme,
 					lang,
-					index,
+					section.path,
 				).build();
 				break;
 		}
@@ -268,7 +274,7 @@ export async function chronology(
 			section.item.references.length > 0
 		) {
 			const references = section.item.references;
-			for (const reference of references) {
+			for (const [index, reference] of references.entries()) {
 				if (reference.name && reference.testimonial) {
 					const referenceHtml = ReferenceHtmlElement(
 						{
@@ -283,7 +289,7 @@ export async function chronology(
 						},
 						theme,
 						lang,
-						index,
+						`${section.path}.references.${index}`,
 					).build();
 					page = await addSection(page, referenceHtml, theme, actions);
 				}

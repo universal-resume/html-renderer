@@ -64,11 +64,11 @@ export function HeaderHtmlElement(
 	};
 
 	return {
-		build: ({ id }: { id: string }) => {
+		build: () => {
 			addFlagIcons();
-			const domElement = document.createElement("div");
-			domElement.id = id;
-			domElement.classList.add("section", "flex", "py-4", "relative");
+			const domElement = document.createElement("section");
+			domElement.classList.add("flex", "py-4", "relative");
+			domElement.setAttribute("data-type", "header");
 			domElement.innerHTML = `
                 <div class="w-1/4">
                     <div class="flex items-center justify-center">

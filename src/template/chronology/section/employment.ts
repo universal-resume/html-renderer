@@ -35,7 +35,7 @@ export function EmploymentHtmlElement(
 	}: Employment.Type,
 	theme: Theme,
 	lang: Lang,
-	index: number,
+	path: string,
 ) {
 	return {
 		build: () => {
@@ -50,7 +50,7 @@ export function EmploymentHtmlElement(
                 ${TagsHtmlElement(tags, theme.color.primary)}
 	`;
 			const sidebar = `${DateHtmlElement({ startDate, endDate }, lang)} ${TypeHtmlElement({ type: "employment" }, lang, theme.color.secondary)} ${TypeHtmlElement({ type }, lang, theme.color.primary)} ${SubDateHtmlElement({ startDate, endDate }, lang)} `;
-			return SectionLayout("work", index, theme, main, sidebar);
+			return SectionLayout("work", path, theme, main, sidebar);
 		},
 	};
 }

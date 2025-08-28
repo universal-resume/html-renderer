@@ -21,7 +21,7 @@ export function AwardHtmlElement(
 	{ issuer, date, summary, location, tags, title }: Award.Type,
 	theme: Theme,
 	lang: Lang,
-	index: number,
+	path: string,
 ) {
 	return {
 		build: () => {
@@ -34,7 +34,7 @@ export function AwardHtmlElement(
                 ${TagsHtmlElement(tags, theme.color.primary)}
             `;
 			const sidebar = `${DateHtmlElement({ date }, lang)} ${TypeHtmlElement({ type: "award" }, lang, theme.color.secondary)} ${SubDateHtmlElement({ date }, lang)}`;
-			return SectionLayout("award", index, theme, main, sidebar);
+			return SectionLayout("award", path, theme, main, sidebar);
 		},
 	};
 }

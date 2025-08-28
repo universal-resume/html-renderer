@@ -34,7 +34,7 @@ export function InitiativeHtmlElement(
 	}: Initiative.Type,
 	theme: Theme,
 	lang: Lang,
-	index: number,
+	path: string,
 ) {
 	return {
 		build: () => {
@@ -49,7 +49,7 @@ export function InitiativeHtmlElement(
                 ${TagsHtmlElement(tags, theme.color.primary)}
             `;
 			const sidebar = `${DateHtmlElement({ startDate, endDate }, lang)} ${TypeHtmlElement({ type: "project" }, lang, theme.color.secondary)} ${TypeHtmlElement({ type }, lang, theme.color.primary)} ${SubDateHtmlElement({ startDate, endDate }, lang)}`;
-			return SectionLayout("project", index, theme, main, sidebar);
+			return SectionLayout("project", path, theme, main, sidebar);
 		},
 	};
 }
